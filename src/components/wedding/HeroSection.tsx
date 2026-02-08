@@ -64,38 +64,25 @@ const HeroSection = () => {
           </ScratchCard>
         </div>
 
-        {!isRevealed && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="mt-4 text-sm text-muted-foreground"
-          >
-            сотри сердце ♡
-          </motion.p>
-        )}
       </motion.div>
 
-      {/* Scroll hint - appears after reveal */}
-      {isRevealed && (
+      {/* Arrow at bottom edge */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
+      >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8 flex flex-col items-center"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="text-wedding-forest"
         >
-          <p className="text-sm text-muted-foreground mb-2">листайте вниз</p>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-wedding-forest"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 5v14M5 12l7 7 7-7" />
-            </svg>
-          </motion.div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
         </motion.div>
-      )}
+      </motion.div>
     </section>
   );
 };
