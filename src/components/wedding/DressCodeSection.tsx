@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import dresscodeWomen from "@/assets/dresscode-women-final.png";
-import dresscodeMen from "@/assets/dresscode-men-final.png";
+import dresscodeWomen from "@/assets/dresscode-women-transparent.png";
+import dresscodeMen from "@/assets/dresscode-men-transparent.png";
 
 const DressCodeSection = () => {
   const palette = [
