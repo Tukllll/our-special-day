@@ -11,7 +11,7 @@ const LocationSection = () => {
     offset: ["start end", "end start"],
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   const details = [
     {
