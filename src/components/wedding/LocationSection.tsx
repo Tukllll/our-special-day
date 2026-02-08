@@ -36,24 +36,24 @@ const LocationSection = () => {
         viewport={{ once: true }}
         className="max-w-md mx-auto w-full"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-sm uppercase tracking-[0.3em] text-muted-foreground text-center mb-8"
-        >
-          Где и когда
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="wedding-title text-center mb-12"
+          className="wedding-title text-center mb-4"
         >
-          Ждём вас
+          Ну вот мы и женимся!
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-center text-muted-foreground mb-12 leading-relaxed"
+        >
+          И будем рады видеть тебя на нашем празднике
+        </motion.p>
 
         <div className="space-y-6">
           {details.map((item, index) => (
