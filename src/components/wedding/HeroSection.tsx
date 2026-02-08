@@ -43,7 +43,7 @@ const HeroSection = () => {
               <motion.img
                 src={birdImage}
                 alt="Птичка"
-                className="absolute w-32 md:w-48 h-auto"
+                className="absolute w-48 md:w-72 h-auto"
                 style={{ bottom: "100%", left: "50%", transform: "translateX(-50%)" }}
                 initial={{ y: 0, rotate: 0 }}
                 animate={{ 
