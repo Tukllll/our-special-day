@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const DressCodeSection = () => {
   const palette = [
-    { color: "hsl(350, 35%, 65%)", name: "Пыльная роза" },
-    { color: "hsl(140, 25%, 70%)", name: "Шалфей" },
-    { color: "hsl(40, 40%, 96%)", name: "Айвори" },
-    { color: "hsl(30, 30%, 80%)", name: "Беж" },
-    { color: "hsl(350, 20%, 75%)", name: "Пудра" },
+    { color: "hsl(150, 25%, 35%)", name: "Тёмный лес" },
+    { color: "hsl(140, 15%, 55%)", name: "Шалфей" },
+    { color: "hsl(120, 5%, 75%)", name: "Камень" },
+    { color: "hsl(60, 20%, 96%)", name: "Крем" },
+    { color: "hsl(145, 20%, 85%)", name: "Мята" },
   ];
 
   return (
@@ -110,7 +110,7 @@ const DressCodeSection = () => {
             </div>
             
             <div className="flex items-start gap-3">
-              <span className="text-wedding-rose text-lg">✗</span>
+              <span className="text-wedding-charcoal text-lg">✗</span>
               <div>
                 <p className="font-medium text-sm">Просим избегать</p>
                 <p className="text-sm text-muted-foreground">

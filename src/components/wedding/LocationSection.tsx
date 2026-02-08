@@ -27,7 +27,7 @@ const LocationSection = () => {
     <section 
       className="wedding-section"
       style={{ 
-        background: "linear-gradient(180deg, hsl(var(--wedding-blush)) 0%, hsl(var(--wedding-cream)) 100%)" 
+        background: "linear-gradient(180deg, hsl(var(--wedding-mint)) 0%, hsl(var(--wedding-cream)) 100%)" 
       }}
     >
       <motion.div
@@ -67,9 +67,9 @@ const LocationSection = () => {
             >
               <div 
                 className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ background: "hsl(var(--wedding-rose) / 0.15)" }}
+                style={{ background: "hsl(var(--wedding-forest) / 0.15)" }}
               >
-                <item.icon className="w-5 h-5 text-wedding-rose" />
+                <item.icon className="w-5 h-5 text-wedding-forest" />
               </div>
               
               <div className="flex-1">
