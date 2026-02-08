@@ -38,7 +38,7 @@ const HeroSection = () => {
         transition={{ duration: 1, delay: 0.3 }}
         className="text-xl md:text-2xl mb-8 text-center text-muted-foreground"
       >
-        v samom najale...
+        v samom nachale...
       </motion.p>
 
       {/* Scratch card with heart */}
