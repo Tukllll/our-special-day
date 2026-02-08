@@ -80,7 +80,7 @@ const QuotesSection = () => {
         src={girlSinger}
         alt=""
         className="absolute pointer-events-none w-40 md:w-52 opacity-90"
-        style={{ top: "10%", right: "5%" }}
+        style={{ top: "calc(10% - 18px)", right: "5%" }}
         animate={{
           y: [0, -20, 10, -15, 0],
           x: [0, -15, 10, -10, 0],
