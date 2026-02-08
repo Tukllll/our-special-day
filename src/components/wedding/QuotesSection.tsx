@@ -38,20 +38,23 @@ const QuotesSection = () => {
           }}
         />
         
-        {/* Rocket - launch up and return with rotation */}
+        {/* Rocket - realistic launch up and return */}
         <motion.img
           src={rocket}
           alt=""
-          className="absolute bottom-[10%] left-[15%] w-32 md:w-48 opacity-90"
+          className="absolute bottom-[10%] left-[15%] w-32 md:w-48 opacity-90 origin-center"
+          initial={{ y: 0, rotate: -90, scale: 1 }}
           animate={{
-            y: [0, -400, -400, 0],
-            rotate: [-90, -90, 90, -90],
+            y: [0, -20, -450, -450, -20, 0],
+            rotate: [-90, -90, -90, 90, 90, -90],
+            scale: [1, 1.05, 0.9, 0.9, 1.05, 1],
+            x: [0, -3, 0, 0, 3, 0],
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
-            ease: "easeInOut",
-            times: [0, 0.4, 0.5, 1],
+            times: [0, 0.05, 0.35, 0.5, 0.95, 1],
+            ease: [0.36, 0, 0.66, -0.56],
           }}
         />
         
