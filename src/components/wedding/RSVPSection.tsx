@@ -127,7 +127,7 @@ const RSVPSection = () => {
           {/* Name */}
           <div className="wedding-card">
             <Label htmlFor="name" className="text-sm font-medium mb-2 block">
-              Ваше имя и фамилия
+              Ваше имя
             </Label>
             <Input
               id="name"
