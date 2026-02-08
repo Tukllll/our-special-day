@@ -61,13 +61,6 @@ const HeroSection = () => {
               </div>
             </ScratchCard>
             
-            {/* Blue accent line */}
-            <motion.div
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-0.5 bg-primary"
-              initial={{ width: 0 }}
-              animate={{ width: isRevealed ? 120 : 60 }}
-              transition={{ duration: 0.5 }}
-            />
           </div>
         </motion.div>
       </div>
