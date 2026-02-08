@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import dresscodeWomen from "@/assets/dresscode-women-transparent.png";
-import dresscodeMen from "@/assets/dresscode-men-transparent.png";
+import man1 from "@/assets/man-1.webp";
+import man2 from "@/assets/man-2.webp";
+import man3 from "@/assets/man-3.webp";
+import man4 from "@/assets/man-4.webp";
 
 const DressCodeSection = () => {
+  const menImages = [man1, man2, man3, man4];
+  
   const palette = [
     { color: "hsl(25, 30%, 35%)", name: "Шоколад" },
     { color: "hsl(40, 20%, 70%)", name: "Беж" },
@@ -102,11 +107,20 @@ const DressCodeSection = () => {
               className="text-center"
             >
               <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для него</p>
-              <img
-                src={dresscodeMen}
-                alt="Примеры мужского дресс-кода"
-                className="w-full h-auto object-contain"
-              />
+              <div className="flex justify-center items-end gap-1">
+                {menImages.map((img, index) => (
+                  <motion.img
+                    key={index}
+                    src={img}
+                    alt={`Мужской образ ${index + 1}`}
+                    className="w-1/4 h-auto object-contain"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.7 + index * 0.1 }}
+                  />
+                ))}
+              </div>
             </motion.div>
 
             {/* Women - Right */}
