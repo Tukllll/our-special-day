@@ -13,7 +13,7 @@ const DressCodeSection = () => {
 
   return (
     <section 
-      className="wedding-section py-16"
+      className="min-h-screen py-16 flex flex-col items-center justify-center px-6"
       style={{ background: "hsl(var(--background))" }}
     >
       <motion.div
