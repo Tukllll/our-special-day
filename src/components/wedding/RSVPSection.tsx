@@ -45,7 +45,7 @@ const RSVPSection = () => {
       <section 
         className="wedding-section"
         style={{ 
-          background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-blush)) 100%)" 
+          background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-mint)) 100%)" 
         }}
       >
         <motion.div
@@ -77,7 +77,7 @@ const RSVPSection = () => {
     <section 
       className="wedding-section py-16"
       style={{ 
-        background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-blush)) 100%)" 
+        background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-mint)) 100%)" 
       }}
     >
       <motion.div
@@ -133,7 +133,7 @@ const RSVPSection = () => {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Иван Иванов"
-              className="bg-background/50 border-wedding-rose/20 focus:border-wedding-rose"
+              className="bg-background/50 border-wedding-forest/20 focus:border-wedding-forest"
             />
           </div>
 
@@ -148,15 +148,15 @@ const RSVPSection = () => {
               className="space-y-2"
             >
               <div className="flex items-center space-x-3">
-                <RadioGroupItem value="yes" id="yes" className="border-wedding-rose text-wedding-rose" />
+                <RadioGroupItem value="yes" id="yes" className="border-wedding-forest text-wedding-forest" />
                 <Label htmlFor="yes" className="text-sm cursor-pointer">Да, с радостью! 🎉</Label>
               </div>
               <div className="flex items-center space-x-3">
-                <RadioGroupItem value="maybe" id="maybe" className="border-wedding-rose text-wedding-rose" />
+                <RadioGroupItem value="maybe" id="maybe" className="border-wedding-forest text-wedding-forest" />
                 <Label htmlFor="maybe" className="text-sm cursor-pointer">Пока не уверен(а)</Label>
               </div>
               <div className="flex items-center space-x-3">
-                <RadioGroupItem value="no" id="no" className="border-wedding-rose text-wedding-rose" />
+                <RadioGroupItem value="no" id="no" className="border-wedding-forest text-wedding-forest" />
                 <Label htmlFor="no" className="text-sm cursor-pointer">К сожалению, не смогу</Label>
               </div>
             </RadioGroup>
@@ -179,19 +179,19 @@ const RSVPSection = () => {
                   className="space-y-2"
                 >
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="wine" id="wine" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="wine" id="wine" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="wine" className="text-sm cursor-pointer">Вино 🍷</Label>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="champagne" id="champagne" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="champagne" id="champagne" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="champagne" className="text-sm cursor-pointer">Шампанское 🥂</Label>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="strong" id="strong" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="strong" id="strong" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="strong" className="text-sm cursor-pointer">Крепкие напитки 🥃</Label>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="none" id="noalcohol" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="none" id="noalcohol" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="noalcohol" className="text-sm cursor-pointer">Безалкогольные 🍹</Label>
                   </div>
                 </RadioGroup>
@@ -212,15 +212,15 @@ const RSVPSection = () => {
                   className="space-y-2"
                 >
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="meat" id="meat" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="meat" id="meat" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="meat" className="text-sm cursor-pointer">Мясо 🥩</Label>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="fish" id="fish" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="fish" id="fish" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="fish" className="text-sm cursor-pointer">Рыба 🐟</Label>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value="vegan" id="vegan" className="border-wedding-rose text-wedding-rose" />
+                    <RadioGroupItem value="vegan" id="vegan" className="border-wedding-forest text-wedding-forest" />
                     <Label htmlFor="vegan" className="text-sm cursor-pointer">Вегетарианское 🥗</Label>
                   </div>
                 </RadioGroup>
@@ -238,7 +238,7 @@ const RSVPSection = () => {
               value={formData.wishes}
               onChange={(e) => setFormData({ ...formData, wishes: e.target.value })}
               placeholder="Есть ли у вас аллергия или особые пожелания?"
-              className="bg-background/50 border-wedding-rose/20 focus:border-wedding-rose min-h-[100px]"
+              className="bg-background/50 border-wedding-forest/20 focus:border-wedding-forest min-h-[100px]"
             />
           </div>
 

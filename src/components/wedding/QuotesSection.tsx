@@ -36,7 +36,7 @@ const QuotesSection = () => {
               {/* Decorative quote mark */}
               <span 
                 className="absolute -top-6 -left-2 text-6xl font-serif opacity-10"
-                style={{ color: "hsl(var(--wedding-rose))" }}
+                style={{ color: "hsl(var(--wedding-forest))" }}
               >
                 "
               </span>

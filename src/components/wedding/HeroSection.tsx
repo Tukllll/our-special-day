@@ -10,13 +10,13 @@ const HeroSection = () => {
     <section
       className="wedding-section relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-blush)) 100%)",
+        background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-mint)) 100%)",
       }}
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-10 left-5 w-2 h-2 rounded-full bg-wedding-rose/30"
+          className="absolute top-10 left-5 w-2 h-2 rounded-full bg-wedding-forest/30"
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
@@ -26,7 +26,7 @@ const HeroSection = () => {
           transition={{ duration: 3, repeat: Infinity, delay: 1 }}
         />
         <motion.div
-          className="absolute bottom-40 left-10 w-2 h-2 rounded-full bg-wedding-dusty/30"
+          className="absolute bottom-40 left-10 w-2 h-2 rounded-full bg-wedding-stone/30"
           animate={{ y: [0, -25, 0], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
         />
@@ -88,7 +88,7 @@ const HeroSection = () => {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-wedding-rose"
+            className="text-wedding-forest"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14M5 12l7 7 7-7" />

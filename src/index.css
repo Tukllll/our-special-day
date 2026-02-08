@@ -12,44 +12,44 @@
 
 @layer base {
   :root {
-    --background: 30 30% 97%;
-    --foreground: 20 15% 25%;
+    --background: 120 8% 96%;
+    --foreground: 120 10% 20%;
 
-    --card: 30 25% 95%;
-    --card-foreground: 20 15% 25%;
+    --card: 120 10% 94%;
+    --card-foreground: 120 10% 20%;
 
-    --popover: 30 30% 97%;
-    --popover-foreground: 20 15% 25%;
+    --popover: 120 8% 96%;
+    --popover-foreground: 120 10% 20%;
 
-    --primary: 350 35% 65%;
-    --primary-foreground: 30 30% 97%;
+    --primary: 150 25% 35%;
+    --primary-foreground: 120 8% 96%;
 
-    --secondary: 140 20% 75%;
-    --secondary-foreground: 20 15% 25%;
+    --secondary: 120 8% 85%;
+    --secondary-foreground: 120 10% 20%;
 
-    --muted: 30 15% 90%;
-    --muted-foreground: 20 10% 50%;
+    --muted: 120 5% 90%;
+    --muted-foreground: 120 5% 45%;
 
-    --accent: 350 25% 75%;
-    --accent-foreground: 20 15% 25%;
+    --accent: 150 20% 45%;
+    --accent-foreground: 120 8% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 350 35% 65%;
+    --border: 120 8% 85%;
+    --input: 120 8% 85%;
+    --ring: 150 25% 35%;
 
     --radius: 0.75rem;
 
     /* Wedding specific tokens */
-    --wedding-rose: 350 35% 65%;
-    --wedding-blush: 350 30% 90%;
-    --wedding-cream: 40 40% 96%;
-    --wedding-sage: 140 25% 70%;
-    --wedding-dusty: 350 20% 75%;
-    --wedding-gold: 40 50% 55%;
-    --wedding-text: 20 15% 25%;
+    --wedding-forest: 150 25% 35%;
+    --wedding-sage: 140 15% 55%;
+    --wedding-mint: 145 20% 85%;
+    --wedding-stone: 120 5% 75%;
+    --wedding-charcoal: 120 5% 35%;
+    --wedding-cream: 60 20% 96%;
+    --wedding-text: 120 10% 20%;
 
     /* Fonts */
     --font-main: 'Maksimilijan', Georgia, serif;
@@ -65,33 +65,33 @@
   }
 
   .dark {
-    --background: 20 15% 12%;
-    --foreground: 30 20% 90%;
+    --background: 120 10% 10%;
+    --foreground: 120 8% 90%;
 
-    --card: 20 15% 15%;
-    --card-foreground: 30 20% 90%;
+    --card: 120 10% 12%;
+    --card-foreground: 120 8% 90%;
 
-    --popover: 20 15% 12%;
-    --popover-foreground: 30 20% 90%;
+    --popover: 120 10% 10%;
+    --popover-foreground: 120 8% 90%;
 
-    --primary: 350 35% 70%;
-    --primary-foreground: 20 15% 12%;
+    --primary: 150 25% 45%;
+    --primary-foreground: 120 10% 10%;
 
-    --secondary: 140 20% 35%;
-    --secondary-foreground: 30 20% 90%;
+    --secondary: 120 8% 25%;
+    --secondary-foreground: 120 8% 90%;
 
-    --muted: 20 15% 20%;
-    --muted-foreground: 30 15% 60%;
+    --muted: 120 10% 18%;
+    --muted-foreground: 120 5% 55%;
 
-    --accent: 350 25% 40%;
-    --accent-foreground: 30 20% 90%;
+    --accent: 150 20% 35%;
+    --accent-foreground: 120 8% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 20 15% 25%;
-    --input: 20 15% 25%;
-    --ring: 350 35% 70%;
+    --border: 120 10% 20%;
+    --input: 120 10% 20%;
+    --ring: 150 25% 45%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -140,21 +140,21 @@
     background: linear-gradient(
       135deg,
       hsl(var(--wedding-cream)) 0%,
-      hsl(var(--wedding-blush) / 0.5) 100%
+      hsl(var(--wedding-mint) / 0.5) 100%
     );
-    box-shadow: 0 4px 30px hsl(var(--wedding-rose) / 0.1);
+    box-shadow: 0 4px 30px hsl(var(--wedding-forest) / 0.1);
   }
 
   .wedding-btn {
     @apply px-8 py-3 rounded-full font-medium transition-all duration-300;
-    background: hsl(var(--wedding-rose));
+    background: hsl(var(--wedding-forest));
     color: hsl(var(--wedding-cream));
   }
 
   .wedding-btn:hover {
-    background: hsl(var(--wedding-dusty));
+    background: hsl(var(--wedding-charcoal));
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsl(var(--wedding-rose) / 0.3);
+    box-shadow: 0 8px 25px hsl(var(--wedding-forest) / 0.3);
   }
 
   .palette-swatch {
