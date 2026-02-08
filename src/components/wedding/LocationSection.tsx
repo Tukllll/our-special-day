@@ -1,7 +1,18 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Clock, Calendar } from "lucide-react";
+import { useRef } from "react";
+import churchImage from "@/assets/church.png";
 
 const LocationSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   const details = [
     {
       icon: Calendar,
@@ -25,22 +36,34 @@ const LocationSection = () => {
 
   return (
     <section 
-      className="wedding-section"
-      style={{ 
-        background: "linear-gradient(180deg, hsl(var(--wedding-mint)) 0%, hsl(var(--wedding-cream)) 100%)" 
-      }}
+      ref={sectionRef}
+      className="min-h-screen relative overflow-hidden flex items-center"
     >
+      {/* Parallax background image - grayscale */}
+      <motion.div 
+        className="absolute inset-0 w-full h-[130%] -top-[15%]"
+        style={{ y: backgroundY }}
+      >
+        <img 
+          src={churchImage} 
+          alt="Church" 
+          className="w-full h-full object-cover grayscale"
+        />
+        <div className="absolute inset-0 bg-background/70" />
+      </motion.div>
+
+      {/* Content - left aligned */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-md mx-auto w-full"
+        className="relative z-10 w-full max-w-2xl px-6 py-12 md:px-12"
       >
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="wedding-title text-center mb-4"
+          className="wedding-title text-left mb-4"
         >
           Ну вот мы и женимся!
         </motion.h2>
@@ -50,7 +73,7 @@ const LocationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-center text-muted-foreground mb-12 leading-relaxed"
+          className="text-left text-muted-foreground mb-12 leading-relaxed text-lg"
         >
           И будем рады видеть тебя на нашем празднике
         </motion.p>
@@ -63,20 +86,19 @@ const LocationSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="wedding-card flex items-start gap-4"
+              className="flex items-start gap-4 bg-background/80 backdrop-blur-sm p-4 border border-border"
             >
               <div 
-                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ background: "hsl(var(--wedding-forest) / 0.15)" }}
+                className="w-12 h-12 flex items-center justify-center flex-shrink-0 border border-foreground/20"
               >
-                <item.icon className="w-5 h-5 text-wedding-forest" />
+                <item.icon className="w-5 h-5 text-foreground" />
               </div>
               
               <div className="flex-1">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
                   {item.label}
                 </p>
-                <p className="font-serif text-xl text-foreground">
+                <p className="text-2xl text-foreground">
                   {item.value}
                 </p>
                 <p className="text-sm text-muted-foreground mt-0.5">
@@ -98,7 +120,7 @@ const LocationSection = () => {
             href="https://maps.google.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="wedding-btn w-full flex items-center justify-center gap-2"
+            className="wedding-btn inline-flex items-center gap-2"
           >
             <MapPin className="w-4 h-4" />
             Открыть карту
