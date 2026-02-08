@@ -28,47 +28,49 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-4xl md:text-6xl font-bold tracking-widest uppercase text-muted-foreground mb-8 text-center"
-      >
-        В САМОМ НАЧАЛЕ...
-      </motion.p>
+      {/* Centered content container */}
+      <div className="flex flex-col items-center justify-center flex-1">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-4xl md:text-6xl font-bold tracking-widest uppercase text-muted-foreground mb-6 text-center"
+        >
+          В САМОМ НАЧАЛЕ...
+        </motion.p>
 
-      {/* Scratch card heart - centered */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="flex items-center justify-center flex-1"
-      >
-        <div className="relative">
-          <ScratchCard
-            width={256}
-            height={256}
-            image={heartImage}
-            finishPercent={99}
-            onComplete={handleComplete}
-            brushSize={30}
-          >
-            <div className="w-full h-full flex items-center justify-center bg-background">
-              <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase wedding-accent">
-                27 МАЯ
-              </p>
-            </div>
-          </ScratchCard>
-          
-          {/* Blue accent line */}
-          <motion.div
-            className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-0.5 bg-primary"
-            initial={{ width: 0 }}
-            animate={{ width: isRevealed ? 120 : 60 }}
-            transition={{ duration: 0.5 }}
-          />
-        </div>
-      </motion.div>
+        {/* Scratch card heart */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="relative">
+            <ScratchCard
+              width={256}
+              height={256}
+              image={heartImage}
+              finishPercent={99}
+              onComplete={handleComplete}
+              brushSize={30}
+            >
+              <div className="w-full h-full flex items-center justify-center bg-background">
+                <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase wedding-accent">
+                  27 МАЯ
+                </p>
+              </div>
+            </ScratchCard>
+            
+            {/* Blue accent line */}
+            <motion.div
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-0.5 bg-primary"
+              initial={{ width: 0 }}
+              animate={{ width: isRevealed ? 120 : 60 }}
+              transition={{ duration: 0.5 }}
+            />
+          </div>
+        </motion.div>
+      </div>
 
       {/* Scroll hint - at bottom */}
       <motion.div
