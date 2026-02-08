@@ -15,7 +15,7 @@
     --popover: 40 10% 90%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 195 70% 55%;
+    --primary: 0 0% 20%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 40 5% 80%;
@@ -24,7 +24,7 @@
     --muted: 40 5% 85%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 195 70% 55%;
+    --accent: 0 0% 20%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,14 +32,14 @@
 
     --border: 0 0% 75%;
     --input: 0 0% 75%;
-    --ring: 195 70% 55%;
+    --ring: 0 0% 20%;
 
     --radius: 0rem;
 
     /* Wedding specific tokens - minimalist style */
     --wedding-bg: 40 10% 90%;
     --wedding-charcoal: 0 0% 15%;
-    --wedding-blue: 195 70% 55%;
+    --wedding-blue: 0 0% 20%;
     --wedding-gray: 0 0% 40%;
     --wedding-light: 40 8% 95%;
 
@@ -66,7 +66,7 @@
     --popover: 0 0% 10%;
     --popover-foreground: 40 10% 90%;
 
-    --primary: 195 70% 55%;
+    --primary: 40 10% 85%;
     --primary-foreground: 0 0% 10%;
 
     --secondary: 0 0% 20%;
@@ -75,7 +75,7 @@
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 195 70% 55%;
+    --accent: 40 10% 85%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -83,7 +83,7 @@
 
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 195 70% 55%;
+    --ring: 40 10% 85%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
