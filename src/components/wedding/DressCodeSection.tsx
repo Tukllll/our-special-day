@@ -13,7 +13,7 @@ const DressCodeSection = () => {
 
   return (
     <section 
-      className="min-h-screen py-16 flex flex-col items-center justify-center px-6"
+      className="h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
       style={{ background: "hsl(var(--background))" }}
     >
       <motion.div
