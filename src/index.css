@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Beograd';
-  src: url('/fonts/beograd.regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Maksimilijan';
   src: url('/fonts/Maksimilijan.ttf') format('truetype');
   font-weight: 400;
@@ -60,7 +52,7 @@
     --wedding-text: 20 15% 25%;
 
     /* Fonts */
-    --font-main: 'Beograd', Georgia, serif;
+    --font-main: 'Maksimilijan', Georgia, serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

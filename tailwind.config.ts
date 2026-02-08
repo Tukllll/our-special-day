@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        main: ['Beograd', 'Georgia', 'serif'],
+        main: ['Maksimilijan', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
