@@ -42,7 +42,7 @@ const LocationSection = () => {
     >
       {/* Parallax background image - grayscale */}
       <motion.div 
-        className="fixed inset-0 w-full h-full -z-10"
+        className="fixed inset-0 w-full h-[120%] -top-[10%] -z-10"
         style={{ y: backgroundY }}
       >
         <img 
