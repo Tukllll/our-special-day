@@ -79,7 +79,7 @@ const QuotesSection = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-lg mx-auto px-6 text-center relative z-10"
+        className="max-w-lg mx-auto px-6 relative z-10"
       >
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -95,12 +95,12 @@ const QuotesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6"
+          className="space-y-2"
         >
-          <p className="text-xl md:text-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl leading-relaxed text-justify">
             И хотим разделить этот день с самыми близкими и дорогими нам людьми
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-justify">
             Приглашаем вас отпраздновать вместе с нами начало нашей семейной истории
           </p>
         </motion.div>
