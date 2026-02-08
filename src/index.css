@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,47 +6,45 @@
 
 @layer base {
   :root {
-    --background: 120 8% 96%;
-    --foreground: 120 10% 20%;
+    --background: 40 10% 90%;
+    --foreground: 0 0% 15%;
 
-    --card: 120 10% 94%;
-    --card-foreground: 120 10% 20%;
+    --card: 40 8% 88%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 120 8% 96%;
-    --popover-foreground: 120 10% 20%;
+    --popover: 40 10% 90%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 150 25% 35%;
-    --primary-foreground: 120 8% 96%;
+    --primary: 195 70% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 120 8% 85%;
-    --secondary-foreground: 120 10% 20%;
+    --secondary: 40 5% 80%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 120 5% 90%;
-    --muted-foreground: 120 5% 45%;
+    --muted: 40 5% 85%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 150 20% 45%;
-    --accent-foreground: 120 8% 96%;
+    --accent: 195 70% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 120 8% 85%;
-    --input: 120 8% 85%;
-    --ring: 150 25% 35%;
+    --border: 0 0% 75%;
+    --input: 0 0% 75%;
+    --ring: 195 70% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
-    /* Wedding specific tokens */
-    --wedding-forest: 150 25% 35%;
-    --wedding-sage: 140 15% 55%;
-    --wedding-mint: 145 20% 85%;
-    --wedding-stone: 120 5% 75%;
-    --wedding-charcoal: 120 5% 35%;
-    --wedding-cream: 60 20% 96%;
-    --wedding-text: 120 10% 20%;
+    /* Wedding specific tokens - minimalist style */
+    --wedding-bg: 40 10% 90%;
+    --wedding-charcoal: 0 0% 15%;
+    --wedding-blue: 195 70% 55%;
+    --wedding-gray: 0 0% 40%;
+    --wedding-light: 40 8% 95%;
 
     /* Fonts */
-    --font-main: 'Amatic SC', cursive;
+    --font-main: 'Space Mono', monospace;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -59,33 +57,33 @@
   }
 
   .dark {
-    --background: 120 10% 10%;
-    --foreground: 120 8% 90%;
+    --background: 0 0% 10%;
+    --foreground: 40 10% 90%;
 
-    --card: 120 10% 12%;
-    --card-foreground: 120 8% 90%;
+    --card: 0 0% 12%;
+    --card-foreground: 40 10% 90%;
 
-    --popover: 120 10% 10%;
-    --popover-foreground: 120 8% 90%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 40 10% 90%;
 
-    --primary: 150 25% 45%;
-    --primary-foreground: 120 10% 10%;
+    --primary: 195 70% 55%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 120 8% 25%;
-    --secondary-foreground: 120 8% 90%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 40 10% 90%;
 
-    --muted: 120 10% 18%;
-    --muted-foreground: 120 5% 55%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 150 20% 35%;
-    --accent-foreground: 120 8% 90%;
+    --accent: 195 70% 55%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 120 10% 20%;
-    --input: 120 10% 20%;
-    --ring: 150 25% 45%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 195 70% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -115,44 +113,44 @@
   }
 
   .wedding-title {
-    @apply text-4xl md:text-5xl font-light tracking-wide;
-    color: hsl(var(--wedding-text));
+    @apply text-4xl md:text-5xl font-bold tracking-widest uppercase;
+    color: hsl(var(--foreground));
   }
 
   .wedding-subtitle {
-    @apply text-xl md:text-2xl font-light italic;
+    @apply text-sm md:text-base font-normal tracking-[0.3em] uppercase;
     color: hsl(var(--muted-foreground));
   }
 
   .wedding-quote {
-    @apply text-lg md:text-xl italic text-center leading-relaxed;
-    color: hsl(var(--wedding-text));
+    @apply text-base md:text-lg text-center leading-relaxed tracking-wide;
+    color: hsl(var(--foreground));
   }
 
   .wedding-card {
-    @apply rounded-2xl p-6 md:p-8;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--wedding-cream)) 0%,
-      hsl(var(--wedding-mint) / 0.5) 100%
-    );
-    box-shadow: 0 4px 30px hsl(var(--wedding-forest) / 0.1);
+    @apply p-6 md:p-8 border border-border;
+    background: hsl(var(--card));
   }
 
   .wedding-btn {
-    @apply px-8 py-3 rounded-full font-medium transition-all duration-300;
-    background: hsl(var(--wedding-forest));
-    color: hsl(var(--wedding-cream));
+    @apply px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300 border-2;
+    background: transparent;
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--foreground));
   }
 
   .wedding-btn:hover {
-    background: hsl(var(--wedding-charcoal));
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsl(var(--wedding-forest) / 0.3);
+    background: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .wedding-accent {
+    color: hsl(var(--primary));
   }
 
   .palette-swatch {
-    @apply w-12 h-12 md:w-16 md:h-16 rounded-full shadow-md border-2;
-    border-color: hsl(var(--wedding-cream));
+    @apply w-12 h-12 md:w-16 md:h-16 border-2;
+    border-color: hsl(var(--foreground));
   }
 }

@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        main: ['Amatic SC', 'cursive'],
+        main: ['Space Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,13 +51,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         wedding: {
-          forest: "hsl(var(--wedding-forest))",
-          sage: "hsl(var(--wedding-sage))",
-          mint: "hsl(var(--wedding-mint))",
-          stone: "hsl(var(--wedding-stone))",
+          bg: "hsl(var(--wedding-bg))",
           charcoal: "hsl(var(--wedding-charcoal))",
-          cream: "hsl(var(--wedding-cream))",
-          text: "hsl(var(--wedding-text))",
+          blue: "hsl(var(--wedding-blue))",
+          gray: "hsl(var(--wedding-gray))",
+          light: "hsl(var(--wedding-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
