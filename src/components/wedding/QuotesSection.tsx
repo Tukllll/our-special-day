@@ -46,14 +46,14 @@ const QuotesSection = () => {
           className="absolute w-32 md:w-48 opacity-90"
           style={{ bottom: "5%", left: "5%" }}
           animate={{
-            x: ["0vw", "75vw", "0vw"],
-            y: ["0vh", "-80vh", "0vh"],
-            rotate: [90, 90, 270, 270, 90],
+            x: ["0vw", "75vw", "75vw", "0vw"],
+            y: ["0vh", "-80vh", "-80vh", "0vh"],
+            rotate: [90, 90, 270, 270],
           }}
           transition={{
             duration: 12,
             repeat: Infinity,
-            times: [0, 0.45, 0.5, 0.95, 1],
+            times: [0, 0.45, 0.55, 1],
             ease: "easeInOut",
           }}
         />
