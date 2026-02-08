@@ -76,7 +76,7 @@ const QuotesSection = () => {
         src={prince}
         alt="Маленький принц"
         className="absolute pointer-events-none w-52 md:w-80"
-        style={{ bottom: 0, right: 0 }}
+        style={{ bottom: 0, right: -40 }}
       />
 
       <motion.div
