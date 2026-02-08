@@ -53,21 +53,13 @@ const HeroSection = () => {
             width={280}
             height={280}
             image={heartImage}
-            finishPercent={40}
+            finishPercent={99}
             onComplete={() => setIsRevealed(true)}
             brushSize={30}
             fadeOutOnComplete
           >
-            <div 
-              className="w-[280px] h-[280px] flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-blush)) 100%)",
-              }}
-            >
-              <div className="text-center">
-                <p className="wedding-title text-5xl md:text-6xl">27 мая</p>
-                <p className="text-2xl mt-2 text-muted-foreground">2025</p>
-              </div>
+            <div className="w-[280px] h-[280px] flex items-center justify-center">
+              <p className="wedding-title text-5xl md:text-6xl">27 мая</p>
             </div>
           </ScratchCard>
         </div>
