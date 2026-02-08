@@ -1,32 +1,32 @@
 import { motion } from "framer-motion";
-import dresscodeWomen from "@/assets/dresscode-women-nobg.png";
-import dresscodeMen from "@/assets/dresscode-men-nobg.png";
+import dresscodeWomen from "@/assets/dresscode-women-final.png";
+import dresscodeMen from "@/assets/dresscode-men-final.png";
 
 const DressCodeSection = () => {
   const palette = [
-    { color: "hsl(150, 25%, 35%)", name: "Тёмный лес" },
-    { color: "hsl(140, 15%, 55%)", name: "Шалфей" },
-    { color: "hsl(120, 5%, 75%)", name: "Камень" },
-    { color: "hsl(60, 20%, 96%)", name: "Крем" },
-    { color: "hsl(145, 20%, 85%)", name: "Мята" },
+    { color: "hsl(25, 30%, 35%)", name: "Шоколад" },
+    { color: "hsl(40, 20%, 70%)", name: "Беж" },
+    { color: "hsl(55, 60%, 85%)", name: "Крем" },
+    { color: "hsl(120, 20%, 55%)", name: "Шалфей" },
+    { color: "hsl(0, 0%, 85%)", name: "Серебро" },
   ];
 
   return (
     <section 
-      className="wedding-section"
-      style={{ background: "hsl(var(--wedding-cream))" }}
+      className="wedding-section py-16"
+      style={{ background: "hsl(var(--background))" }}
     >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-2xl mx-auto w-full text-center"
+        className="max-w-4xl mx-auto w-full"
       >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-8"
+          className="text-sm uppercase tracking-[0.3em] text-muted-foreground text-center mb-8"
         >
           Дресс-код
         </motion.p>
@@ -36,7 +36,7 @@ const DressCodeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="wedding-title mb-6"
+          className="wedding-title text-center mb-6"
         >
           Палитра праздника
         </motion.h2>
@@ -46,19 +46,18 @@ const DressCodeSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-muted-foreground mb-10 leading-relaxed"
+          className="text-muted-foreground text-center mb-10 leading-relaxed max-w-md mx-auto"
         >
-          Мы будем рады, если ваш наряд будет в нежных, пастельных тонах. 
-          Вот палитра, которая задаст настроение нашему дню:
+          Мы будем рады, если ваш наряд будет в нежных, природных тонах
         </motion.p>
 
-        {/* Color palette */}
+        {/* Color palette - two rows like reference */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex justify-center gap-3 mb-10"
+          className="flex justify-center gap-4 md:gap-6 mb-12"
         >
           {palette.map((item, index) => (
             <motion.div
@@ -67,29 +66,34 @@ const DressCodeSection = () => {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 + index * 0.1, type: "spring" }}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center gap-2"
             >
+              {/* Solid color circle */}
               <div 
-                className="palette-swatch mb-2"
+                className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-foreground/10"
                 style={{ backgroundColor: item.color }}
               />
-              <span className="text-[10px] text-muted-foreground max-w-[60px] leading-tight">
-                {item.name}
-              </span>
+              {/* Texture circle */}
+              <div 
+                className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-foreground/10 overflow-hidden"
+                style={{ 
+                  background: `linear-gradient(135deg, ${item.color} 0%, hsl(from ${item.color} h s calc(l + 20)) 50%, ${item.color} 100%)`,
+                }}
+              />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Dress code examples - side by side */}
+        {/* Dress code examples - men left, women right */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mb-10"
+          className="relative"
         >
-          <div className="grid grid-cols-2 gap-4 items-end">
-            {/* Women */}
+          <div className="grid grid-cols-2 gap-2 md:gap-8 items-end">
+            {/* Men - Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -97,15 +101,15 @@ const DressCodeSection = () => {
               transition={{ delay: 0.6 }}
               className="text-center"
             >
-              <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Для неё</p>
+              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для него</p>
               <img
-                src={dresscodeWomen}
-                alt="Примеры женского дресс-кода"
-                className="w-full h-auto object-contain max-h-[500px]"
+                src={dresscodeMen}
+                alt="Примеры мужского дресс-кода"
+                className="w-full h-auto object-contain"
               />
             </motion.div>
 
-            {/* Men */}
+            {/* Women - Right */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -113,58 +117,26 @@ const DressCodeSection = () => {
               transition={{ delay: 0.7 }}
               className="text-center"
             >
-              <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Для него</p>
+              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для неё</p>
               <img
-                src={dresscodeMen}
-                alt="Примеры мужского дресс-кода"
-                className="w-full h-auto object-contain max-h-[500px]"
+                src={dresscodeWomen}
+                alt="Примеры женского дресс-кода"
+                className="w-full h-auto object-contain"
               />
             </motion.div>
           </div>
         </motion.div>
 
-        {/* Guidelines */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        {/* Simple note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
-          className="wedding-card text-left max-w-md mx-auto"
+          className="text-center text-sm text-muted-foreground mt-10"
         >
-          <h3 className="font-serif text-lg mb-4 text-center">Рекомендации</h3>
-          
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <span className="text-wedding-sage text-lg">✓</span>
-              <div>
-                <p className="font-medium text-sm">Для девушек</p>
-                <p className="text-sm text-muted-foreground">
-                  Платья в пол или миди, элегантные костюмы
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <span className="text-wedding-sage text-lg">✓</span>
-              <div>
-                <p className="font-medium text-sm">Для мужчин</p>
-                <p className="text-sm text-muted-foreground">
-                  Классический костюм, можно без галстука
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <span className="text-wedding-charcoal text-lg">✗</span>
-              <div>
-                <p className="font-medium text-sm">Просим избегать</p>
-                <p className="text-sm text-muted-foreground">
-                  Белый цвет и чёрный total look
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+          Просим избегать белый цвет и чёрный total look
+        </motion.p>
       </motion.div>
     </section>
   );
