@@ -55,7 +55,7 @@ const HeroSection = () => {
           >
             <div className="w-full h-full flex items-center justify-center bg-background">
               <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase wedding-accent">
-                27 MAI
+                27 МАЯ
               </p>
             </div>
           </ScratchCard>
