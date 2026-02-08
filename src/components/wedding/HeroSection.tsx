@@ -40,7 +40,7 @@ const HeroSection = () => {
             className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6"
           >
             В САМО<span className="relative">М<motion.div
-              className="absolute -top-5 md:-top-8 left-1/2 -translate-x-1/2"
+              className="absolute -top-2 md:-top-3 left-1/2 -translate-x-1/2"
               initial={{ y: 0, rotate: 0 }}
               animate={{ 
                 y: [0, 0, 0, -2, 0, -150, -300],
@@ -59,7 +59,7 @@ const HeroSection = () => {
               <img 
                 src={birdImage} 
                 alt="Птичка" 
-                className="w-10 h-8 md:w-14 md:h-12 object-contain"
+                className="w-14 h-12 md:w-20 md:h-16 object-contain"
               />
             </motion.div></span><br />НАЧАЛЕ
           </motion.p>
