@@ -28,13 +28,13 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Centered content container */}
-      <div className="flex flex-col items-center justify-center flex-1">
+      {/* Content container */}
+      <div className="flex flex-col items-center justify-center flex-1 w-full px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-bold tracking-widest uppercase text-muted-foreground mb-6 text-left"
+          className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6 self-start"
         >
           В САМОМ<br />НАЧАЛЕ
         </motion.p>
