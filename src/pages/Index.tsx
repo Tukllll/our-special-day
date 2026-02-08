@@ -16,10 +16,10 @@ const Index = () => {
       <div className="snap-start">
         <LocationSection />
       </div>
-      <div className="snap-start">
+      <div>
         <DressCodeSection />
       </div>
-      <div className="snap-start min-h-screen">
+      <div>
         <RSVPSection />
       </div>
     </div>
