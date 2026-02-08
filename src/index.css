@@ -1,14 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: 'Maksimilijan';
-  src: url('/fonts/Maksimilijan.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 @layer base {
   :root {
@@ -52,7 +46,7 @@
     --wedding-text: 120 10% 20%;
 
     /* Fonts */
-    --font-main: 'Maksimilijan', Georgia, serif;
+    --font-main: 'Amatic SC', cursive;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
