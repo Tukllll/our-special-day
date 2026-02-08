@@ -22,7 +22,7 @@ const LocationSection = () => {
     {
       label: "Время",
       value: "15:00",
-      subtext: "сбор гостей"
+      subtext: "сбор гостей и трансфер из Минска до локации"
     },
     {
       label: "Место",
