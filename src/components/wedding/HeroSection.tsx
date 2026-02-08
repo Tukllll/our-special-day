@@ -59,7 +59,7 @@ const HeroSection = () => {
               <img 
                 src={birdImage} 
                 alt="Птичка" 
-                className="w-14 h-12 md:w-20 md:h-16 object-contain"
+                className="w-[30px] h-[24px] object-contain"
               />
             </motion.div></span><br />НАЧАЛЕ
           </motion.p>
