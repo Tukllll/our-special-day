@@ -66,7 +66,7 @@ const LocationSection = () => {
           viewport={{ once: true }}
           className="wedding-title text-left mb-4"
         >
-          Ну вот мы и женимся!
+          —— мы женимся!
         </motion.h2>
 
         <motion.p
