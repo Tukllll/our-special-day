@@ -1,21 +1,13 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import ScratchCard from "react-scratchcard-v2";
+import heartImage from "@/assets/heart.png";
 
 const HeroSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"]
-  });
-
-  const heartOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const heartScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
-  const textOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1]);
+  const [isRevealed, setIsRevealed] = useState(false);
 
   return (
     <section 
-      ref={sectionRef}
       className="wedding-section relative overflow-hidden"
       style={{ 
         background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-blush)) 100%)" 
@@ -49,85 +41,68 @@ const HeroSection = () => {
         в самом начале...
       </motion.p>
 
-      {/* Heart that fades on scroll */}
+      {/* Scratchcard with heart */}
       <motion.div
-        style={{ opacity: heartOpacity, scale: heartScale }}
-        className="relative flex items-center justify-center my-8"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="relative flex flex-col items-center justify-center"
       >
-        <svg 
-          viewBox="0 0 100 100" 
-          className="w-40 h-40 md:w-52 md:h-52"
-        >
-          <defs>
-            <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(350, 35%, 65%)" />
-              <stop offset="100%" stopColor="hsl(350, 25%, 75%)" />
-            </linearGradient>
-          </defs>
-          <motion.path
-            d="M50 88 C20 60 5 40 15 25 C25 10 40 15 50 30 C60 15 75 10 85 25 C95 40 80 60 50 88Z"
-            fill="url(#heartGradient)"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, delay: 0.5 }}
-          />
-        </svg>
-        
-        {/* Animated sparkles around heart */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        >
-          {[...Array(6)].map((_, i) => (
-            <motion.span
-              key={i}
-              className="absolute w-1.5 h-1.5 bg-wedding-gold rounded-full"
-              style={{
-                top: `${20 + Math.sin(i * 60 * Math.PI / 180) * 45}%`,
-                left: `${50 + Math.cos(i * 60 * Math.PI / 180) * 45}%`,
+        <div className="relative">
+          <ScratchCard
+            width={280}
+            height={280}
+            image={heartImage}
+            finishPercent={40}
+            brushSize={40}
+            fadeOutOnComplete={true}
+            onComplete={() => setIsRevealed(true)}
+          >
+            <div 
+              className="flex items-center justify-center w-full h-full"
+              style={{ 
+                background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-blush)) 100%)" 
               }}
-              animate={{ 
-                opacity: [0.4, 1, 0.4],
-                scale: [0.8, 1.2, 0.8]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
-                delay: i * 0.3 
-              }}
-            />
-          ))}
-        </motion.div>
+            >
+              <div className="text-center">
+                <p className="wedding-title text-5xl md:text-6xl">27 мая</p>
+                <p className="wedding-subtitle mt-2">2025</p>
+              </div>
+            </div>
+          </ScratchCard>
+        </div>
+
+        {!isRevealed && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            className="mt-4 text-sm text-muted-foreground"
+          >
+            сотрите сердечко ☝️
+          </motion.p>
+        )}
       </motion.div>
 
-      {/* Scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="mt-6 flex flex-col items-center"
-      >
-        <p className="text-sm text-muted-foreground mb-2">листайте вниз</p>
+      {/* Animated reveal confirmation */}
+      {isRevealed && (
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="text-wedding-rose"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mt-6 flex flex-col items-center"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="text-wedding-rose"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+          </motion.div>
         </motion.div>
-      </motion.div>
-
-      {/* Date reveal */}
-      <motion.div 
-        style={{ opacity: textOpacity }}
-        className="mt-12 text-center"
-      >
-        <p className="wedding-title text-5xl md:text-6xl">27 мая</p>
-        <p className="wedding-subtitle mt-2">2025</p>
-      </motion.div>
+      )}
     </section>
   );
 };
