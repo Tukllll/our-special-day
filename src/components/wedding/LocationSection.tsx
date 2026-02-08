@@ -48,9 +48,9 @@ const LocationSection = () => {
         <img 
           src={churchImage} 
           alt="Church" 
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover grayscale contrast-125 brightness-90"
         />
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-background/40" />
       </motion.div>
 
       {/* Content - left aligned */}
