@@ -15,9 +15,9 @@ const QuotesSection = () => {
   ];
 
   const floatingImages = [
-    { src: astronaut, className: "top-[10%] left-[5%] w-20 md:w-28", delay: 0 },
-    { src: rocket, className: "top-[20%] right-[8%] w-16 md:w-24", delay: 1 },
-    { src: slon, className: "bottom-[25%] left-[10%] w-24 md:w-32", delay: 2 },
+    { src: astronaut, className: "top-[10%] left-[5%] w-60 md:w-80", delay: 0 },
+    { src: rocket, className: "top-[20%] right-[8%] w-48 md:w-72", delay: 1 },
+    { src: slon, className: "bottom-[25%] left-[10%] w-72 md:w-96", delay: 2 },
   ];
 
   return (
@@ -32,7 +32,7 @@ const QuotesSection = () => {
             key={index}
             src={img.src}
             alt=""
-            className={`absolute opacity-40 ${img.className}`}
+            className={`absolute opacity-90 ${img.className}`}
             animate={{
               y: [0, -15, 0],
               x: [0, 8, 0],
@@ -52,7 +52,7 @@ const QuotesSection = () => {
       <img
         src={prince}
         alt="Маленький принц"
-        className="absolute bottom-4 right-4 w-28 md:w-40 opacity-50 pointer-events-none"
+        className="absolute bottom-0 right-0 w-80 md:w-[30rem] pointer-events-none"
       />
 
       <motion.div
