@@ -39,29 +39,28 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6"
           >
-            В САМО<span className="relative">М<motion.div
-              className="absolute -top-[200px] md:-top-[200px] left-1/2 -translate-x-1/2"
-              initial={{ y: 0, rotate: 0 }}
-              animate={{ 
-                y: [0, 0, 0, -2, 0, -150, -300],
-                x: [0, 0, 0, 0, 0, 150, 350],
-                rotate: [0, 0, 0, -3, 3, -15, -25],
-                opacity: [1, 1, 1, 1, 1, 1, 0]
-              }}
-              transition={{ 
-                duration: 8,
-                repeat: Infinity,
-                repeatDelay: 4,
-                times: [0, 0.3, 0.35, 0.38, 0.42, 0.7, 1],
-                ease: "easeOut"
-              }}
-            >
-              <img 
-                src={birdImage} 
-                alt="Птичка" 
-                className="w-[400px] h-[320px] object-contain"
+            В САМО<span className="relative inline-block">М
+              <motion.img
+                src={birdImage}
+                alt="Птичка"
+                className="absolute w-32 md:w-48 h-auto"
+                style={{ bottom: "100%", left: "50%", transform: "translateX(-50%)" }}
+                initial={{ y: 0, rotate: 0 }}
+                animate={{ 
+                  y: [0, 0, 0, -2, 0, -150, -300],
+                  x: [0, 0, 0, 0, 0, 150, 350],
+                  rotate: [0, 0, 0, -3, 3, -15, -25],
+                  opacity: [1, 1, 1, 1, 1, 1, 0]
+                }}
+                transition={{ 
+                  duration: 8,
+                  repeat: Infinity,
+                  repeatDelay: 4,
+                  times: [0, 0.3, 0.35, 0.38, 0.42, 0.7, 1],
+                  ease: "easeOut"
+                }}
               />
-            </motion.div></span><br />НАЧАЛЕ
+            </span><br />НАЧАЛЕ
           </motion.p>
         </div>
 
