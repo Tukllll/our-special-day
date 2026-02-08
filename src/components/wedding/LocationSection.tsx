@@ -17,7 +17,7 @@ const LocationSection = () => {
     {
       label: "Дата",
       value: "27 мая 2026",
-      subtext: "вторник"
+      subtext: "среда"
     },
     {
       label: "Время",
