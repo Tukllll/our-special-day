@@ -6,22 +6,18 @@ import RSVPSection from "@/components/wedding/RSVPSection";
 
 const Index = () => {
   return (
-    <div className="h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth">
-      <div className="snap-start">
+    <div className="min-h-screen overflow-x-hidden">
+      <div className="h-screen snap-start snap-always">
         <HeroSection />
       </div>
-      <div className="snap-start">
+      <div className="h-screen snap-start snap-always">
         <QuotesSection />
       </div>
-      <div className="snap-start">
+      <div className="h-screen snap-start snap-always">
         <LocationSection />
       </div>
-      <div>
-        <DressCodeSection />
-      </div>
-      <div>
-        <RSVPSection />
-      </div>
+      <DressCodeSection />
+      <RSVPSection />
     </div>
   );
 };
