@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
-import dresscodeWomen from "@/assets/dresscode-women-transparent.png";
 import man1 from "@/assets/man-1.webp";
 import man2 from "@/assets/man-2.webp";
 import man3 from "@/assets/man-3.webp";
 import man4 from "@/assets/man-4.webp";
+import woman1 from "@/assets/woman-1.webp";
+import woman2 from "@/assets/woman-2.webp";
+import woman3 from "@/assets/woman-3.webp";
+import woman4 from "@/assets/woman-4.webp";
 
 const DressCodeSection = () => {
   const menImages = [man1, man2, man3, man4];
+  const womenImages = [woman1, woman2, woman3, woman4];
   
   const palette = [
     { color: "hsl(30, 25%, 75%)" },
@@ -124,11 +128,20 @@ const DressCodeSection = () => {
               className="text-center"
             >
               <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для неё</p>
-              <img
-                src={dresscodeWomen}
-                alt="Примеры женского дресс-кода"
-                className="w-full h-auto object-contain"
-              />
+              <div className="flex justify-center items-end -space-x-28">
+                {womenImages.map((img, index) => (
+                  <motion.img
+                    key={index}
+                    src={img}
+                    alt={`Женский образ ${index + 1}`}
+                    className="w-full h-auto object-contain"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8 + index * 0.1 }}
+                  />
+                ))}
+              </div>
             </motion.div>
           </div>
         </motion.div>
