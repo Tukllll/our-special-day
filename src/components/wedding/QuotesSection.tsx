@@ -55,21 +55,18 @@ const QuotesSection = () => {
           }}
         />
         
-        {/* Slon */}
+        {/* Slon - moving left to right */}
         <motion.img
           src={slon}
           alt=""
-          className="absolute bottom-[25%] left-[10%] w-48 md:w-64 opacity-90"
+          className="absolute bottom-[20%] w-48 md:w-64 opacity-90"
           animate={{
-            y: [0, -15, 0],
-            x: [0, 8, 0],
-            rotate: [0, 3, -3, 0],
+            x: ["-10vw", "90vw", "-10vw"],
           }}
           transition={{
-            duration: 8,
+            duration: 20,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
+            ease: "linear",
           }}
         />
       </div>
