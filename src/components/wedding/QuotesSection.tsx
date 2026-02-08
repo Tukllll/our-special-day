@@ -39,23 +39,22 @@ const QuotesSection = () => {
           }}
         />
         
-        {/* Rocket - realistic launch up and return */}
+        {/* Rocket - diagonal flight from bottom-left to top-right */}
         <motion.img
           src={rocket}
           alt=""
-          className="absolute bottom-[10%] left-[15%] w-32 md:w-48 opacity-90 origin-center"
-          initial={{ y: 0, rotate: -90, scale: 1 }}
+          className="absolute w-32 md:w-48 opacity-90"
+          style={{ bottom: "5%", left: "5%" }}
           animate={{
-            y: [0, -20, -450, -450, -20, 0],
-            rotate: [-90, -90, -90, 90, 90, -90],
-            scale: [1, 1.05, 0.9, 0.9, 1.05, 1],
-            x: [0, -3, 0, 0, 3, 0],
+            x: ["0vw", "75vw", "0vw"],
+            y: ["0vh", "-80vh", "0vh"],
+            rotate: [-45, -45, 135, 135, -45],
           }}
           transition={{
-            duration: 10,
+            duration: 12,
             repeat: Infinity,
-            times: [0, 0.05, 0.35, 0.5, 0.95, 1],
-            ease: [0.36, 0, 0.66, -0.56],
+            times: [0, 0.45, 0.5, 0.95, 1],
+            ease: "easeInOut",
           }}
         />
         
