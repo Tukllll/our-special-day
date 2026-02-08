@@ -59,7 +59,7 @@ const HeroSection = () => {
             fadeOutOnComplete
           >
             <div className="w-[280px] h-[280px] flex items-center justify-center">
-              <p className="wedding-title text-5xl md:text-6xl">27 мая</p>
+              <p className="wedding-title text-5xl md:text-6xl">27 mai</p>
             </div>
           </ScratchCard>
         </div>
