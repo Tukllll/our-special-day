@@ -13,7 +13,7 @@ const DressCodeSection = () => {
     { color: "hsl(40, 30%, 85%)" },
     { color: "hsl(45, 35%, 90%)" },
     { color: "hsl(20, 20%, 80%)" },
-    { color: "hsl(35, 15%, 88%)" },
+    { color: "hsl(0, 0%, 98%)" },
   ];
 
   return (
