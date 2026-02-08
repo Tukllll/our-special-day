@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MapPin, Clock, Calendar } from "lucide-react";
+import { Heart, Sparkles, MapPinned } from "lucide-react";
 import { useRef } from "react";
 import churchImage from "@/assets/church.png";
 
@@ -15,19 +15,19 @@ const LocationSection = () => {
 
   const details = [
     {
-      icon: Calendar,
+      icon: "📅",
       label: "Дата",
       value: "27 мая 2025",
       subtext: "вторник"
     },
     {
-      icon: Clock,
+      icon: "🕐",
       label: "Время",
       value: "15:00",
       subtext: "сбор гостей"
     },
     {
-      icon: MapPin,
+      icon: "📍",
       label: "Место",
       value: "Ресторан «Название»",
       subtext: "ул. Примерная, 123"
@@ -60,6 +60,17 @@ const LocationSection = () => {
         viewport={{ once: true }}
         className="relative z-10 w-full max-w-2xl px-6 py-12 md:px-12"
       >
+        {/* Decorative element */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-2 mb-6"
+        >
+          <Sparkles className="w-5 h-5 text-foreground/60" />
+          <div className="h-px flex-1 bg-foreground/20 max-w-[100px]" />
+        </motion.div>
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +90,7 @@ const LocationSection = () => {
           И будем рады видеть тебя на нашем празднике
         </motion.p>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {details.map((item, index) => (
             <motion.div
               key={index}
@@ -87,24 +98,36 @@ const LocationSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="flex items-start gap-4 bg-background/80 backdrop-blur-sm p-4 border border-border"
+              className="group relative"
             >
+              {/* Card with gradient border effect */}
               <div 
-                className="w-12 h-12 flex items-center justify-center flex-shrink-0 border border-foreground/20"
+                className="relative flex items-center gap-5 p-5 backdrop-blur-md overflow-hidden"
+                style={{ 
+                  background: "linear-gradient(135deg, hsl(var(--background) / 0.9) 0%, hsl(var(--card) / 0.85) 100%)",
+                  borderLeft: "3px solid hsl(var(--foreground) / 0.3)",
+                }}
               >
-                <item.icon className="w-5 h-5 text-foreground" />
-              </div>
-              
-              <div className="flex-1">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-                  {item.label}
-                </p>
-                <p className="text-2xl text-foreground">
-                  {item.value}
-                </p>
-                <p className="text-sm text-muted-foreground mt-0.5">
-                  {item.subtext}
-                </p>
+                {/* Emoji icon */}
+                <div className="text-3xl md:text-4xl flex-shrink-0">
+                  {item.icon}
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
+                    {item.label}
+                  </p>
+                  <p className="text-xl md:text-2xl text-foreground font-medium">
+                    {item.value}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {item.subtext}
+                  </p>
+                </div>
+
+                {/* Decorative corner */}
+                <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-foreground/10" />
               </div>
             </motion.div>
           ))}
@@ -115,7 +138,7 @@ const LocationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="mt-10"
+          className="mt-10 flex items-center gap-4"
         >
           <a 
             href="https://maps.google.com" 
@@ -123,9 +146,11 @@ const LocationSection = () => {
             rel="noopener noreferrer"
             className="wedding-btn inline-flex items-center gap-2"
           >
-            <MapPin className="w-4 h-4" />
+            <MapPinned className="w-4 h-4" />
             Открыть карту
           </a>
+          
+          <Heart className="w-5 h-5 text-foreground/30" />
         </motion.div>
       </motion.div>
     </section>
