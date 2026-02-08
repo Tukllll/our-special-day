@@ -128,7 +128,7 @@ const DressCodeSection = () => {
               className="text-center"
             >
               <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для неё</p>
-              <div className="flex justify-center items-end -space-x-[115px]">
+              <div className="flex justify-center items-end -space-x-[115px] translate-x-2">
                 {womenImages.map((img, index) => (
                   <motion.img
                     key={index}
