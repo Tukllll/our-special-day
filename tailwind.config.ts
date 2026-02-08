@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        main: ['Space Mono', 'monospace'],
+        main: ['Amatic SC', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
