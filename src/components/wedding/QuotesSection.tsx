@@ -4,11 +4,9 @@ const QuotesSection = () => {
   const quotes = [
     {
       text: "А если все пойдут прыгать с 5 этажа, ты тоже пойдёшь?",
-      author: "— Мама",
     },
     {
       text: "Тили-тили тесто — жених и невеста!",
-      author: "— Одноклассники",
     },
   ];
 
@@ -29,15 +27,6 @@ const QuotesSection = () => {
         transition={{ duration: 0.8 }}
         className="max-w-lg mx-auto px-6 text-center relative z-10"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12"
-        >
-          Из детства
-        </motion.p>
-
         <div className="space-y-16">
           {quotes.map((quote, index) => (
             <motion.div
@@ -49,9 +38,6 @@ const QuotesSection = () => {
             >
               <p className="text-2xl md:text-3xl leading-relaxed">
                 «{quote.text}»
-              </p>
-              <p className="text-sm text-muted-foreground mt-4">
-                {quote.author}
               </p>
             </motion.div>
           ))}
