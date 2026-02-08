@@ -45,7 +45,7 @@ const QuotesSection = () => {
           className="absolute bottom-[10%] left-[15%] w-32 md:w-48 opacity-90"
           animate={{
             y: [0, -400, -400, 0],
-            rotate: [-45, -45, 135, -45],
+            rotate: [-90, -90, 90, -90],
           }}
           transition={{
             duration: 8,
