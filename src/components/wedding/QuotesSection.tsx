@@ -5,14 +5,6 @@ import rocket from "@/assets/rocket.webp";
 import slon from "@/assets/slon.webp";
 
 const QuotesSection = () => {
-  const quotes = [
-    {
-      text: "Мы выросли и женимся!",
-    },
-    {
-      text: "Тили-тили тесто — жених и невеста!",
-    },
-  ];
 
   return (
     <section 
@@ -89,21 +81,29 @@ const QuotesSection = () => {
         transition={{ duration: 0.8 }}
         className="max-w-lg mx-auto px-6 text-center relative z-10"
       >
-        <div className="space-y-16">
-          {quotes.map((quote, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <p className="text-2xl md:text-3xl leading-relaxed">
-                «{quote.text}»
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="wedding-title mb-8"
+        >
+          Мы выросли и женимся!
+        </motion.h2>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="space-y-6"
+        >
+          <p className="text-xl md:text-2xl leading-relaxed">
+            И хотим разделить этот день с самыми близкими и дорогими нам людьми
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Приглашаем вас отпраздновать вместе с нами начало нашей семейной истории
+          </p>
+        </motion.div>
       </motion.div>
     </section>
   );
