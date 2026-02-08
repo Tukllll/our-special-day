@@ -55,7 +55,7 @@ const HeroSection = () => {
               brushSize={30}
             >
               <div className="w-full h-full flex items-center justify-center bg-background">
-                <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase text-foreground">
+                <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase text-muted-foreground">
                   27 МАЯ
                 </p>
               </div>
