@@ -42,16 +42,16 @@ const HeroSection = () => {
               className="absolute -top-5 md:-top-8 left-1/2 -translate-x-1/2"
               initial={{ y: 0, rotate: 0 }}
               animate={{ 
-                y: [0, -2, 0, -150, -300],
-                x: [0, 0, 0, 150, 350],
-                rotate: [0, -3, 3, -15, -25],
-                opacity: [1, 1, 1, 1, 0]
+                y: [0, 0, 0, -2, 0, -150, -300],
+                x: [0, 0, 0, 0, 0, 150, 350],
+                rotate: [0, 0, 0, -3, 3, -15, -25],
+                opacity: [1, 1, 1, 1, 1, 1, 0]
               }}
               transition={{ 
-                duration: 6,
+                duration: 8,
                 repeat: Infinity,
-                repeatDelay: 5,
-                times: [0, 0.05, 0.1, 0.5, 1],
+                repeatDelay: 4,
+                times: [0, 0.3, 0.35, 0.38, 0.42, 0.7, 1],
                 ease: "easeOut"
               }}
             >
