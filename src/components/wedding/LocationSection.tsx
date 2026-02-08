@@ -61,20 +61,10 @@ const LocationSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold tracking-widest uppercase text-white mb-4"
+          className="text-4xl md:text-5xl font-bold tracking-widest uppercase text-white mb-10"
         >
-          —— мы женимся!
+          Когда и где
         </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-left text-white/70 mb-10 leading-relaxed text-lg"
-        >
-          И будем рады видеть тебя на нашем празднике
-        </motion.p>
 
         <div className="space-y-1">
           {details.map((item, index) => (
