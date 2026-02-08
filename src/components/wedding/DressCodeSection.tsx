@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import dresscodeWomen from "@/assets/dresscode-women.jpeg";
+import dresscodeMen from "@/assets/dresscode-men.png";
 
 const DressCodeSection = () => {
+  const [activeTab, setActiveTab] = useState<"women" | "men">("women");
+
   const palette = [
     { color: "hsl(150, 25%, 35%)", name: "Тёмный лес" },
     { color: "hsl(140, 15%, 55%)", name: "Шалфей" },
@@ -18,7 +23,7 @@ const DressCodeSection = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-md mx-auto w-full text-center"
+        className="max-w-2xl mx-auto w-full text-center"
       >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +61,7 @@ const DressCodeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex justify-center gap-3 mb-8"
+          className="flex justify-center gap-3 mb-10"
         >
           {palette.map((item, index) => (
             <motion.div
@@ -76,6 +81,57 @@ const DressCodeSection = () => {
               </span>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Dress code examples */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mb-10"
+        >
+          {/* Tabs */}
+          <div className="flex justify-center gap-4 mb-6">
+            <button
+              onClick={() => setActiveTab("women")}
+              className={`px-6 py-2 text-sm uppercase tracking-widest transition-all border-2 ${
+                activeTab === "women"
+                  ? "bg-foreground text-background border-foreground"
+                  : "bg-transparent text-foreground border-foreground/30 hover:border-foreground"
+              }`}
+            >
+              Для неё
+            </button>
+            <button
+              onClick={() => setActiveTab("men")}
+              className={`px-6 py-2 text-sm uppercase tracking-widest transition-all border-2 ${
+                activeTab === "men"
+                  ? "bg-foreground text-background border-foreground"
+                  : "bg-transparent text-foreground border-foreground/30 hover:border-foreground"
+              }`}
+            >
+              Для него
+            </button>
+          </div>
+
+          {/* Images */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: activeTab === "women" ? -20 : 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="border border-border"
+            >
+              <img
+                src={activeTab === "women" ? dresscodeWomen : dresscodeMen}
+                alt={activeTab === "women" ? "Примеры женского дресс-кода" : "Примеры мужского дресс-кода"}
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Guidelines */}
