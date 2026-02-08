@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Bird } from "lucide-react";
+
 import ScratchCard from "react-scratchcard-v2";
 import heartImage from "@/assets/heart.png";
 
@@ -42,20 +42,45 @@ const HeroSection = () => {
               className="absolute -top-5 md:-top-8 left-1/2 -translate-x-1/2"
               initial={{ y: 0, rotate: 0 }}
               animate={{ 
-                y: [0, -3, 0, -60, -100],
-                x: [0, 0, 0, 40, 100],
-                rotate: [0, -5, 5, -20, -30],
+                y: [0, -2, 0, -150, -300],
+                x: [0, 0, 0, 150, 350],
+                rotate: [0, -3, 3, -15, -25],
                 opacity: [1, 1, 1, 1, 0]
               }}
               transition={{ 
-                duration: 3,
+                duration: 6,
                 repeat: Infinity,
-                repeatDelay: 4,
-                times: [0, 0.1, 0.2, 0.6, 1],
+                repeatDelay: 5,
+                times: [0, 0.05, 0.1, 0.5, 1],
                 ease: "easeOut"
               }}
             >
-              <Bird className="w-5 h-5 md:w-8 md:h-8 text-muted-foreground" />
+              {/* Hand-drawn style bird */}
+              <svg 
+                viewBox="0 0 40 30" 
+                className="w-8 h-6 md:w-12 md:h-9 text-muted-foreground"
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {/* Body */}
+                <path d="M8 18 Q15 14, 28 16 Q32 17, 35 15" />
+                {/* Head */}
+                <circle cx="35" cy="14" r="3" />
+                {/* Beak */}
+                <path d="M38 13 L40 12 L38 14" />
+                {/* Eye */}
+                <circle cx="36" cy="13" r="0.8" fill="currentColor" />
+                {/* Wing up */}
+                <path d="M15 16 Q12 8, 18 5 Q22 3, 26 6" />
+                {/* Wing detail */}
+                <path d="M18 14 Q16 10, 20 8" />
+                {/* Tail */}
+                <path d="M8 18 Q4 16, 2 18" />
+                <path d="M8 18 Q5 19, 3 22" />
+              </svg>
             </motion.div></span><br />НАЧАЛЕ
           </motion.p>
         </div>
