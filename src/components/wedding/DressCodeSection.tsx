@@ -9,11 +9,11 @@ const DressCodeSection = () => {
   const menImages = [man1, man2, man3, man4];
   
   const palette = [
-    { color: "hsl(25, 30%, 35%)", name: "Шоколад" },
-    { color: "hsl(40, 20%, 70%)", name: "Беж" },
-    { color: "hsl(55, 60%, 85%)", name: "Крем" },
-    { color: "hsl(120, 20%, 55%)", name: "Шалфей" },
-    { color: "hsl(0, 0%, 85%)", name: "Серебро" },
+    { color: "hsl(30, 25%, 75%)" },
+    { color: "hsl(40, 30%, 85%)" },
+    { color: "hsl(45, 35%, 90%)" },
+    { color: "hsl(20, 20%, 80%)" },
+    { color: "hsl(35, 15%, 88%)" },
   ];
 
   return (
@@ -71,19 +71,11 @@ const DressCodeSection = () => {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 + index * 0.1, type: "spring" }}
-              className="flex flex-col items-center gap-2"
+              className="flex flex-col items-center"
             >
-              {/* Solid color circle */}
               <div 
                 className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-foreground/10"
                 style={{ backgroundColor: item.color }}
-              />
-              {/* Texture circle */}
-              <div 
-                className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-foreground/10 overflow-hidden"
-                style={{ 
-                  background: `linear-gradient(135deg, ${item.color} 0%, hsl(from ${item.color} h s calc(l + 20)) 50%, ${item.color} 100%)`,
-                }}
               />
             </motion.div>
           ))}
