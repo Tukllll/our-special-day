@@ -122,6 +122,7 @@ const RSVPSection = () => {
           transition={{ delay: 0.3 }}
           onSubmit={handleSubmit}
           className="space-y-6"
+          style={{ fontFamily: 'var(--font-form)' }}
         >
           {/* Name */}
           <div className="wedding-card">
