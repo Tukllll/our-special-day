@@ -36,26 +36,15 @@ const QuotesSection = () => {
           Из детства
         </motion.p>
         
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="wedding-title text-center mb-12"
-        >
-          Знакомые фразы
-        </motion.h2>
-
         {/* Quotes as handwritten notes */}
         <div className="space-y-8">
           {quotes.map((quote, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40, rotate: 0 }}
-              whileInView={{ opacity: 1, y: 0, rotate: quote.rotation }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.02, rotate: 0 }}
               className="relative"
             >
               {/* Paper note effect */}
@@ -94,17 +83,6 @@ const QuotesSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Playful footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center text-muted-foreground mt-12 text-sm"
-        >
-          Оказывается, все так и вышло... 💕
-        </motion.p>
       </motion.div>
     </section>
   );
