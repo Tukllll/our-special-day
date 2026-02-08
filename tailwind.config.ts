@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        main: ['Maksimilijan', 'Georgia', 'serif'],
+        main: ['Amatic SC', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
