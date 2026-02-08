@@ -48,7 +48,7 @@ const QuotesSection = () => {
           animate={{
             x: ["0vw", "75vw", "0vw"],
             y: ["0vh", "-80vh", "0vh"],
-            rotate: [45, 45, 225, 225, 45],
+            rotate: [135, 135, 315, 315, 135],
           }}
           transition={{
             duration: 12,
