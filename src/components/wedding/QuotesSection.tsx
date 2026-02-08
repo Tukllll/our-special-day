@@ -7,7 +7,7 @@ import slon from "@/assets/slon.webp";
 const QuotesSection = () => {
   const quotes = [
     {
-      text: "А если все пойдут прыгать с 5 этажа, ты тоже пойдёшь?",
+      text: "Мы выросли и женимся!",
     },
     {
       text: "Тили-тили тесто — жених и невеста!",
