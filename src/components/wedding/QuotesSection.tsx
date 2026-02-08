@@ -38,20 +38,20 @@ const QuotesSection = () => {
           }}
         />
         
-        {/* Rocket with elliptical path */}
+        {/* Rocket - launch up and return with rotation */}
         <motion.img
           src={rocket}
           alt=""
-          className="absolute top-[15%] w-32 md:w-48 opacity-90"
+          className="absolute bottom-[10%] left-[15%] w-32 md:w-48 opacity-90"
           animate={{
-            x: ["0vw", "70vw", "0vw"],
-            y: [0, 100, 0],
-            rotate: [45, 45, 45],
+            y: [0, -400, -400, 0],
+            rotate: [-45, -45, 135, 135, -45],
           }}
           transition={{
-            duration: 15,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
+            times: [0, 0.4, 0.5, 1],
           }}
         />
         
