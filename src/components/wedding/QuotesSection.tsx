@@ -75,17 +75,19 @@ const QuotesSection = () => {
         style={{ bottom: 0, right: -40 }}
       />
 
-      {/* Girl singer - bottom left */}
+      {/* Girl singer - top right, opposite astronaut */}
       <motion.img
         src={girlSinger}
         alt=""
-        className="absolute pointer-events-none w-40 md:w-56"
-        style={{ bottom: 0, left: -20 }}
+        className="absolute pointer-events-none w-40 md:w-52 opacity-90"
+        style={{ top: "10%", right: "5%" }}
         animate={{
-          rotate: [-5, 5, -5],
+          y: [0, -20, 10, -15, 0],
+          x: [0, -15, 10, -10, 0],
+          rotate: [0, -10, 8, -5, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut",
         }}
