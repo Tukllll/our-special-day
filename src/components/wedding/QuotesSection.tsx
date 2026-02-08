@@ -21,18 +21,19 @@ const QuotesSection = () => {
     >
       {/* Floating images on background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Astronaut */}
+        {/* Astronaut - floating in space */}
         <motion.img
           src={astronaut}
           alt=""
           className="absolute top-[10%] left-[5%] w-40 md:w-52 opacity-90"
           animate={{
-            y: [0, -15, 0],
-            x: [0, 8, 0],
-            rotate: [0, 3, -3, 0],
+            y: [0, -30, 10, -20, 0],
+            x: [0, 20, -10, 15, 0],
+            rotate: [0, 15, -10, 8, 0],
+            scale: [1, 1.05, 0.98, 1.02, 1],
           }}
           transition={{
-            duration: 8,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           }}
