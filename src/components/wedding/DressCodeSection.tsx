@@ -134,7 +134,7 @@ const DressCodeSection = () => {
                     key={index}
                     src={img}
                     alt={`Женский образ ${index + 1}`}
-                    className={`w-full h-auto object-contain ${index === 0 ? 'mr-[-3px]' : ''}`}
+                    className={`w-full h-auto object-contain ${index === 0 ? 'mr-[-3px]' : ''} ${index === 3 ? 'ml-[3px]' : ''}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
