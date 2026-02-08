@@ -3,6 +3,7 @@ import prince from "@/assets/prince.webp";
 import astronaut from "@/assets/astronaut-boy.webp";
 import rocket from "@/assets/rocket.webp";
 import slon from "@/assets/slon.webp";
+import girlSinger from "@/assets/girl-singer.webp";
 
 const QuotesSection = () => {
 
@@ -72,6 +73,22 @@ const QuotesSection = () => {
         alt="Маленький принц"
         className="absolute pointer-events-none w-52 md:w-80"
         style={{ bottom: 0, right: -40 }}
+      />
+
+      {/* Girl singer - bottom left */}
+      <motion.img
+        src={girlSinger}
+        alt=""
+        className="absolute pointer-events-none w-40 md:w-56"
+        style={{ bottom: 0, left: -20 }}
+        animate={{
+          rotate: [-5, 5, -5],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       />
 
       <motion.div
