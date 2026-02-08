@@ -30,14 +30,38 @@ const HeroSection = () => {
 
       {/* Content container */}
       <div className="flex flex-col items-center justify-center flex-1 w-full px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6 self-start"
-        >
-          В САМОМ<br />НАЧАЛЕ
-        </motion.p>
+        <div className="relative self-start">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6"
+          >
+            В САМО<span className="relative">М<motion.svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="absolute -top-4 md:-top-6 left-1/2 -translate-x-1/2 w-6 h-6 md:w-10 md:h-10 text-muted-foreground"
+              initial={{ y: 0, rotate: 0 }}
+              animate={{ 
+                y: [0, -5, 0, -80, -120],
+                x: [0, 0, 0, 30, 80],
+                rotate: [0, -5, 5, -10, -15],
+                opacity: [1, 1, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 4,
+                repeat: Infinity,
+                repeatDelay: 3,
+                times: [0, 0.1, 0.2, 0.6, 1],
+                ease: "easeOut"
+              }}
+            >
+              <path d="M12 2C8 6 4 9 4 13c0 2.5 1.5 4.5 3.5 5.5L12 22l4.5-3.5C18.5 17.5 20 15.5 20 13c0-4-4-7-8-11z" />
+              <ellipse cx="8" cy="11" rx="4" ry="2" transform="rotate(-30 8 11)" />
+              <ellipse cx="16" cy="11" rx="4" ry="2" transform="rotate(30 16 11)" />
+            </motion.svg></span><br />НАЧАЛЕ
+          </motion.p>
+        </div>
 
         {/* Scratch card heart */}
         <motion.div 
