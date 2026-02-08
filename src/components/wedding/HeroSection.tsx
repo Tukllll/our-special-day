@@ -44,16 +44,6 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="text-xl md:text-2xl mb-4 text-center text-muted-foreground"
-        style={{ fontFamily: "'Maksimilijan', serif" }}
-      >
-        v samom najale...
-      </motion.p>
-
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
         className="text-xl md:text-2xl mb-8 text-center text-muted-foreground"
       >
         v samom najale...
