@@ -40,7 +40,7 @@ const HeroSection = () => {
             className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6"
           >
             В САМО<span className="relative">М<motion.div
-              className="absolute -top-2 md:-top-3 left-1/2 -translate-x-1/2"
+              className="absolute -top-[200px] md:-top-[200px] left-1/2 -translate-x-1/2"
               initial={{ y: 0, rotate: 0 }}
               animate={{ 
                 y: [0, 0, 0, -2, 0, -150, -300],
