@@ -37,11 +37,12 @@ const LocationSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="min-h-screen relative overflow-hidden flex items-center"
+      className="min-h-screen relative flex items-center"
+      style={{ clipPath: "inset(0)" }}
     >
       {/* Parallax background image - grayscale */}
       <motion.div 
-        className="absolute inset-0 w-full h-[130%] -top-[15%]"
+        className="fixed inset-0 w-full h-full -z-10"
         style={{ y: backgroundY }}
       >
         <img 
