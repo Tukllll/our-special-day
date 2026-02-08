@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import prince from "@/assets/prince.webp";
-import astronaut from "@/assets/astronaut.webp";
+import astronaut from "@/assets/astronaut-custom.webp";
 import rocket from "@/assets/rocket.webp";
 import slon from "@/assets/slon.webp";
 
