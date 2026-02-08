@@ -75,7 +75,7 @@ const RSVPSection = () => {
 
   return (
     <section 
-      className="min-h-screen py-16 overflow-y-auto"
+      className="min-h-screen py-16 px-6 flex flex-col items-center justify-center"
       style={{ 
         background: "linear-gradient(180deg, hsl(var(--wedding-cream)) 0%, hsl(var(--wedding-mint)) 100%)" 
       }}
