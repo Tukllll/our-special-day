@@ -14,12 +14,6 @@ const QuotesSection = () => {
     },
   ];
 
-  const floatingImages = [
-    { src: astronaut, className: "top-[10%] left-[5%] w-60 md:w-80", delay: 0 },
-    { src: rocket, className: "top-[20%] right-[8%] w-48 md:w-72", delay: 1 },
-    { src: slon, className: "bottom-[25%] left-[10%] w-72 md:w-96", delay: 2 },
-  ];
-
   return (
     <section 
       className="wedding-section relative overflow-hidden"
@@ -27,32 +21,65 @@ const QuotesSection = () => {
     >
       {/* Floating images on background */}
       <div className="absolute inset-0 pointer-events-none">
-        {floatingImages.map((img, index) => (
-          <motion.img
-            key={index}
-            src={img.src}
-            alt=""
-            className={`absolute opacity-90 ${img.className}`}
-            animate={{
-              y: [0, -15, 0],
-              x: [0, 8, 0],
-              rotate: [0, 3, -3, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: img.delay,
-            }}
-          />
-        ))}
+        {/* Astronaut */}
+        <motion.img
+          src={astronaut}
+          alt=""
+          className="absolute top-[10%] left-[5%] w-40 md:w-52 opacity-90"
+          animate={{
+            y: [0, -15, 0],
+            x: [0, 8, 0],
+            rotate: [0, 3, -3, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Rocket with elliptical path */}
+        <motion.img
+          src={rocket}
+          alt=""
+          className="absolute top-[15%] w-32 md:w-48 opacity-90"
+          animate={{
+            x: ["0vw", "70vw", "0vw"],
+            y: [0, 100, 0],
+            rotate: [45, 45, 45],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Slon */}
+        <motion.img
+          src={slon}
+          alt=""
+          className="absolute bottom-[25%] left-[10%] w-48 md:w-64 opacity-90"
+          animate={{
+            y: [0, -15, 0],
+            x: [0, 8, 0],
+            rotate: [0, 3, -3, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
       </div>
 
-      {/* Static prince in bottom right */}
+      {/* Static prince in bottom right corner */}
       <img
         src={prince}
         alt="Маленький принц"
-        className="absolute bottom-0 right-0 w-80 md:w-[30rem] pointer-events-none"
+        className="absolute pointer-events-none w-52 md:w-80"
+        style={{ bottom: 0, right: 0 }}
       />
 
       <motion.div
