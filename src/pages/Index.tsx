@@ -16,7 +16,10 @@ const Index = () => {
       <div className="h-screen snap-start snap-always">
         <LocationSection />
       </div>
-      <DressCodeSection />
+      <div className="h-screen snap-start snap-always">
+        <DressCodeSection />
+      </div>
+      <RSVPSection />
       <RSVPSection />
     </div>
   );
