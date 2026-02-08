@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import ScratchCard from "react-scratchcard-v2";
 import heartImage from "@/assets/heart.png";
+import birdImage from "@/assets/bird.webp";
 
 const HeroSection = () => {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -55,32 +56,11 @@ const HeroSection = () => {
                 ease: "easeOut"
               }}
             >
-              {/* Hand-drawn style bird */}
-              <svg 
-                viewBox="0 0 40 30" 
-                className="w-8 h-6 md:w-12 md:h-9 text-muted-foreground"
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                {/* Body */}
-                <path d="M8 18 Q15 14, 28 16 Q32 17, 35 15" />
-                {/* Head */}
-                <circle cx="35" cy="14" r="3" />
-                {/* Beak */}
-                <path d="M38 13 L40 12 L38 14" />
-                {/* Eye */}
-                <circle cx="36" cy="13" r="0.8" fill="currentColor" />
-                {/* Wing up */}
-                <path d="M15 16 Q12 8, 18 5 Q22 3, 26 6" />
-                {/* Wing detail */}
-                <path d="M18 14 Q16 10, 20 8" />
-                {/* Tail */}
-                <path d="M8 18 Q4 16, 2 18" />
-                <path d="M8 18 Q5 19, 3 22" />
-              </svg>
+              <img 
+                src={birdImage} 
+                alt="Птичка" 
+                className="w-10 h-8 md:w-14 md:h-12 object-contain"
+              />
             </motion.div></span><br />НАЧАЛЕ
           </motion.p>
         </div>
