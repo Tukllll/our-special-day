@@ -47,9 +47,9 @@ const HeroSection = () => {
                 style={{ bottom: "100%", left: "50%", transform: "translateX(-50%)" }}
                 initial={{ y: 0, rotate: 0 }}
                 animate={{ 
-                  y: [0, 0, -20, 0, 300, 500],
-                  x: [0, 0, 0, 0, 50, 100],
-                  rotate: [0, 0, -5, 5, 15, 30],
+                  y: [0, 0, -10, 0, -100, -250],
+                  x: [0, 0, 0, 0, 150, 350],
+                  rotate: [0, 0, -3, 3, -15, -25],
                   opacity: [1, 1, 1, 1, 1, 0]
                 }}
                 transition={{ 
