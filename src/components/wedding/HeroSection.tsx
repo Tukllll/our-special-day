@@ -37,7 +37,7 @@ const HeroSection = () => {
           <motion.img
             src={birdImage}
             alt="Птичка"
-            className="absolute w-48 md:w-72 h-auto z-10"
+            className="absolute w-16 md:w-24 h-auto z-10"
             style={{ bottom: "100%", left: "0%" }}
             animate={{ 
               x: ["0%", "0%", "120%", "120%", "200%", "200%", "280%", "280%", "360%", "360%", "440%", "440%", "600%", "800%"],
