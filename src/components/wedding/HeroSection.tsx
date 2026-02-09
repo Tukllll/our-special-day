@@ -33,34 +33,33 @@ const HeroSection = () => {
       {/* Content container */}
       <div className="flex flex-col items-center justify-center flex-1 w-full px-6">
         <div className="relative self-start">
+          {/* Bird hopping on letters */}
+          <motion.img
+            src={birdImage}
+            alt="Птичка"
+            className="absolute w-48 md:w-72 h-auto z-10"
+            style={{ bottom: "100%", left: "0%" }}
+            animate={{ 
+              x: ["0%", "0%", "120%", "120%", "200%", "200%", "280%", "280%", "360%", "360%", "440%", "440%", "600%", "800%"],
+              y: [0, -30, -30, 0, 0, -30, -30, 0, 0, -30, -30, 0, -150, -350],
+              rotate: [0, -5, -5, 0, 0, -5, -5, 0, 0, -5, -5, 0, -20, -30],
+              opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 5,
+              repeat: Infinity,
+              repeatDelay: 3,
+              times: [0, 0.08, 0.12, 0.2, 0.24, 0.32, 0.36, 0.44, 0.48, 0.56, 0.6, 0.68, 0.84, 1],
+              ease: "easeInOut"
+            }}
+          />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6"
           >
-            В САМО<span className="relative inline-block">М
-              <motion.img
-                src={birdImage}
-                alt="Птичка"
-                className="absolute w-48 md:w-72 h-auto"
-                style={{ bottom: "100%", left: "50%", transform: "translateX(-50%)" }}
-                initial={{ y: 0, rotate: 0 }}
-                animate={{ 
-                  y: [0, -50, -150, -300],
-                  x: [0, 80, 200, 400],
-                  rotate: [0, -5, -15, -25],
-                  opacity: [1, 1, 1, 0]
-                }}
-                transition={{ 
-                  duration: 6,
-                  repeat: Infinity,
-                  repeatDelay: 4,
-                  times: [0, 0.3, 0.6, 1],
-                  ease: "easeOut"
-                }}
-              />
-            </span><br />НАЧАЛЕ
+            В САМОМ<br />НАЧАЛЕ
           </motion.p>
         </div>
 
