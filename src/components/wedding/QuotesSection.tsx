@@ -55,7 +55,7 @@ const QuotesSection = () => {
         <motion.img
           src={slon}
           alt=""
-          className="absolute bottom-[8%] w-48 md:w-64 opacity-90"
+          className="absolute bottom-[15%] w-48 md:w-64 opacity-90"
           animate={{
             x: ["-10vw", "90vw", "-10vw"],
           }}
