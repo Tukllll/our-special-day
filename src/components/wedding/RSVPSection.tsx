@@ -18,14 +18,20 @@ const foodMap: Record<string, string> = {
   vegan: "🥗 Вегетарианское",
 };
 
+const transferMap: Record<string, string> = {
+  yes: "✅ Да, нужен",
+  no: "❌ Нет, доберусь сам(а)",
+};
+
 const sendToTelegram = async (formData: {
   name: string;
   attending: string;
   alcohol: string;
   food: string;
+  transfer: string;
   wishes: string;
 }) => {
-  const { name, attending, alcohol, food, wishes } = formData;
+  const { name, attending, alcohol, food, transfer, wishes } = formData;
   const attendingText = attending === "yes" ? "✅ Да, с радостью" : "❌ Не смогу";
 
   let message = `💌 *Новый ответ на приглашение*\n\n`;
@@ -35,6 +41,7 @@ const sendToTelegram = async (formData: {
   if (attending === "yes") {
     if (alcohol) message += `🍸 *Напитки:* ${drinkMap[alcohol] || alcohol}\n`;
     if (food) message += `🍽 *Еда:* ${foodMap[food] || food}\n`;
+    if (transfer) message += `🚐 *Трансфер:* ${transferMap[transfer] || transfer}\n`;
   }
 
   if (wishes) message += `💬 *Пожелания:* ${wishes}\n`;
@@ -64,6 +71,7 @@ const RSVPSection = () => {
     attending: "",
     alcohol: "",
     food: "",
+    transfer: "",
     wishes: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -203,6 +211,14 @@ const RSVPSection = () => {
                     <ChipOption selected={formData.food === "meat"} onClick={() => setFormData({ ...formData, food: "meat" })} label="Мясо 🥩" />
                     <ChipOption selected={formData.food === "fish"} onClick={() => setFormData({ ...formData, food: "fish" })} label="Рыба 🐟" />
                     <ChipOption selected={formData.food === "vegan"} onClick={() => setFormData({ ...formData, food: "vegan" })} label="Вегетарианское 🥗" />
+                  </div>
+                </FormField>
+
+                {/* Transfer */}
+                <FormField label="Нужен ли трансфер из Минска?" delay={0.1}>
+                  <div className="flex flex-wrap gap-2">
+                    <ChipOption selected={formData.transfer === "yes"} onClick={() => setFormData({ ...formData, transfer: "yes" })} label="Да, нужен 🚐" />
+                    <ChipOption selected={formData.transfer === "no"} onClick={() => setFormData({ ...formData, transfer: "no" })} label="Нет, доберусь сам(а)" />
                   </div>
                 </FormField>
               </motion.div>

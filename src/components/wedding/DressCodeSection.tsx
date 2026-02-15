@@ -93,7 +93,7 @@ const DressCodeSection = () => {
           transition={{ delay: 0.5 }}
           className="relative"
         >
-          <div className="grid grid-cols-2 gap-2 md:gap-8 items-end">
+          <div className="grid grid-cols-2 gap-2 md:gap-8 items-end overflow-hidden">
             {/* Men - Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -128,7 +128,7 @@ const DressCodeSection = () => {
               className="text-center"
             >
               <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для неё</p>
-              <div className="flex justify-center items-end -space-x-[115px] translate-x-4">
+              <div className="flex justify-center items-end -space-x-[120px]">
                 {womenImages.map((img, index) => (
                   <motion.img
                     key={index}

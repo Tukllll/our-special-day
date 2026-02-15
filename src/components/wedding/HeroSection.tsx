@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import ScratchCard from "react-scratchcard-v2";
 import heartImage from "@/assets/heart.png";
@@ -7,6 +7,15 @@ import birdImage from "@/assets/bird.webp";
 
 const HeroSection = () => {
   const [isRevealed, setIsRevealed] = useState(false);
+  const scratchRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = scratchRef.current;
+    if (!el) return;
+    const prevent = (e: TouchEvent) => e.preventDefault();
+    el.addEventListener("touchmove", prevent, { passive: false });
+    return () => el.removeEventListener("touchmove", prevent);
+  }, []);
 
   const handleComplete = () => {
     setIsRevealed(true);
@@ -109,7 +118,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="relative">
+          <div className="relative" ref={scratchRef}>
             <ScratchCard
               width={256}
               height={256}
