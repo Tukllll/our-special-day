@@ -1,7 +1,62 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+
+const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
+const drinkMap: Record<string, string> = {
+  wine: "🍷 Вино",
+  champagne: "🥂 Шампанское",
+  strong: "🥃 Крепкие",
+  none: "🍹 Без алкоголя",
+};
+
+const foodMap: Record<string, string> = {
+  meat: "🥩 Мясо",
+  fish: "🐟 Рыба",
+  vegan: "🥗 Вегетарианское",
+};
+
+const sendToTelegram = async (formData: {
+  name: string;
+  attending: string;
+  alcohol: string;
+  food: string;
+  wishes: string;
+}) => {
+  const { name, attending, alcohol, food, wishes } = formData;
+  const attendingText = attending === "yes" ? "✅ Да, с радостью" : "❌ Не смогу";
+
+  let message = `💌 *Новый ответ на приглашение*\n\n`;
+  message += `👤 *Имя:* ${name}\n`;
+  message += `📋 *Присутствие:* ${attendingText}\n`;
+
+  if (attending === "yes") {
+    if (alcohol) message += `🍸 *Напитки:* ${drinkMap[alcohol] || alcohol}\n`;
+    if (food) message += `🍽 *Еда:* ${foodMap[food] || food}\n`;
+  }
+
+  if (wishes) message += `💬 *Пожелания:* ${wishes}\n`;
+
+  const res = await fetch(
+    `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: "Markdown",
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Telegram API error: ${err}`);
+  }
+};
 
 const RSVPSection = () => {
   const [formData, setFormData] = useState({
@@ -16,12 +71,12 @@ const RSVPSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name.trim()) {
       toast.error("Пожалуйста, введите ваше имя");
       return;
     }
-    
+
     if (!formData.attending) {
       toast.error("Пожалуйста, укажите, будете ли вы присутствовать");
       return;
@@ -29,10 +84,7 @@ const RSVPSection = () => {
 
     setIsSubmitting(true);
     try {
-      const { data, error } = await supabase.functions.invoke('send-rsvp-telegram', {
-        body: formData,
-      });
-      if (error) throw error;
+      await sendToTelegram(formData);
       setIsSubmitted(true);
       toast.success("Спасибо! Ваш ответ отправлен 💕");
     } catch (err) {

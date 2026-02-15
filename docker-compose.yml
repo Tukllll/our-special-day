@@ -1,0 +1,11 @@
+services:
+  wedding:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_TELEGRAM_BOT_TOKEN: ${VITE_TELEGRAM_BOT_TOKEN}
+        VITE_TELEGRAM_CHAT_ID: ${VITE_TELEGRAM_CHAT_ID}
+    ports:
+      - "80:80"
+    restart: unless-stopped
