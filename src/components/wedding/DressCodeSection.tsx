@@ -11,7 +11,7 @@ import woman4 from "@/assets/woman-4.webp";
 const DressCodeSection = () => {
   const menImages = [man1, man2, man3, man4];
   const womenImages = [woman1, woman2, woman3, woman4];
-  
+
   const palette = [
     { color: "hsl(30, 25%, 75%)" },
     { color: "hsl(40, 30%, 85%)" },
@@ -21,7 +21,7 @@ const DressCodeSection = () => {
   ];
 
   return (
-    <section 
+    <section
       className="h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
       style={{ background: "hsl(var(--background))" }}
     >
@@ -77,7 +77,7 @@ const DressCodeSection = () => {
               transition={{ delay: 0.4 + index * 0.1, type: "spring" }}
               className="flex flex-col items-center"
             >
-              <div 
+              <div
                 className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-foreground/10"
                 style={{ backgroundColor: item.color }}
               />
@@ -100,9 +100,11 @@ const DressCodeSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="text-center"
+              className="text-center relative z-10"
             >
-              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для него</p>
+              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">
+                Для него
+              </p>
               <div className="flex justify-center items-end -space-x-16 md:-space-x-28">
                 {menImages.map((img, index) => (
                   <motion.img
@@ -127,14 +129,16 @@ const DressCodeSection = () => {
               transition={{ delay: 0.7 }}
               className="text-center"
             >
-              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">Для неё</p>
+              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">
+                Для неё
+              </p>
               <div className="flex justify-center items-end -space-x-[120px]">
                 {womenImages.map((img, index) => (
                   <motion.img
                     key={index}
                     src={img}
                     alt={`Женский образ ${index + 1}`}
-                    className={`w-full h-auto object-contain ${index === 0 ? 'mr-[-10px]' : ''} ${index === 3 ? 'ml-[10px]' : ''}`}
+                    className={`w-full h-auto object-contain ${index === 0 ? "mr-[-10px]" : ""} ${index === 3 ? "ml-[10px]" : ""}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -145,17 +149,6 @@ const DressCodeSection = () => {
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Simple note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="text-center text-sm text-muted-foreground mt-10"
-        >
-          Просим избегать белый цвет и чёрный total look
-        </motion.p>
       </motion.div>
     </section>
   );
