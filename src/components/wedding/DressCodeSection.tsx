@@ -93,7 +93,7 @@ const DressCodeSection = () => {
           transition={{ delay: 0.5 }}
           className="relative"
         >
-          <div className="grid grid-cols-2 gap-2 md:gap-8 items-end overflow-hidden">
+          <div className="grid grid-cols-2 gap-2 md:gap-8 items-end">
             {/* Men - Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
