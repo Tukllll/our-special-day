@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const RSVPSection = () => {
   const [formData, setFormData] = useState({
@@ -27,10 +28,19 @@ const RSVPSection = () => {
     }
 
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success("Спасибо! Ваш ответ отправлен 💕");
+    try {
+      const { data, error } = await supabase.functions.invoke('send-rsvp-telegram', {
+        body: formData,
+      });
+      if (error) throw error;
+      setIsSubmitted(true);
+      toast.success("Спасибо! Ваш ответ отправлен 💕");
+    } catch (err) {
+      console.error(err);
+      toast.error("Ошибка при отправке. Попробуйте ещё раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
