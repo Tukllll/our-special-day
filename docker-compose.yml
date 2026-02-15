@@ -7,5 +7,5 @@ services:
         VITE_TELEGRAM_BOT_TOKEN: ${VITE_TELEGRAM_BOT_TOKEN}
         VITE_TELEGRAM_CHAT_ID: ${VITE_TELEGRAM_CHAT_ID}
     ports:
-      - "80:80"
+      - "3000:80"
     restart: unless-stopped
