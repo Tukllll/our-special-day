@@ -43,7 +43,7 @@ const LocationSection = () => {
       style={{ clipPath: "inset(0)" }}
     >
       {/* Parallax background image - grayscale */}
-      <motion.div className="fixed inset-0 w-full h-[120%] -top-[10%] -z-10" style={{ y: backgroundY }}>
+      <motion.div className="fixed inset-0 w-full h-[120%] -top-[10%] -z-10 pointer-events-none" style={{ y: backgroundY }}>
         <img
           src={churchImage}
           alt="Church"
