@@ -109,11 +109,6 @@ const RSVPSection = () => {
                 label="Да, с радостью 🎉"
               />
               <ChipOption
-                selected={formData.attending === "maybe"}
-                onClick={() => setFormData({ ...formData, attending: "maybe" })}
-                label="Пока не уверен(а)"
-              />
-              <ChipOption
                 selected={formData.attending === "no"}
                 onClick={() => setFormData({ ...formData, attending: "no" })}
                 label="Не смогу 😔"
