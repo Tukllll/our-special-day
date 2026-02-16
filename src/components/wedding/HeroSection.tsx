@@ -96,7 +96,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-muted-foreground mb-6"
+            className="text-5xl md:text-8xl font-bold tracking-widest uppercase text-black mb-6"
           >
             В САМОМ<br />НАЧАЛЕ
           </motion.p>
@@ -118,7 +118,7 @@ const HeroSection = () => {
               brushSize={30}
             >
               <div className="w-full h-full flex items-center justify-center bg-background">
-                <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase text-muted-foreground">
+                <p className="text-3xl md:text-4xl font-bold tracking-widest uppercase text-black">
                   27 МАЯ
                 </p>
               </div>

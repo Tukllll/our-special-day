@@ -17,14 +17,16 @@ const sendToTelegram = async (formData: {
   wishes: string;
 }) => {
   const { name, attending, transfer, wishes } = formData;
-  const attendingText = attending === "yes" ? "✅ Да, с радостью" : "❌ Не смогу";
+  const attendingText =
+    attending === "yes" ? "✅ Да, с радостью" : "❌ Не смогу";
 
   let message = `💌 *Новый ответ на приглашение*\n\n`;
   message += `👤 *Имя:* ${name}\n`;
   message += `📋 *Присутствие:* ${attendingText}\n`;
 
   if (attending === "yes") {
-    if (transfer) message += `🚐 *Трансфер:* ${transferMap[transfer] || transfer}\n`;
+    if (transfer)
+      message += `🚐 *Трансфер:* ${transferMap[transfer] || transfer}\n`;
   }
 
   if (wishes) message += `💬 *Пожелания:* ${wishes}\n`;
@@ -39,7 +41,7 @@ const sendToTelegram = async (formData: {
         text: message,
         parse_mode: "Markdown",
       }),
-    }
+    },
   );
 
   if (!res.ok) {
@@ -53,7 +55,7 @@ const RSVPSection = () => {
     name: "",
     attending: "",
     transfer: "",
-    wishes: ""
+    wishes: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -86,8 +88,15 @@ const RSVPSection = () => {
 
   if (isSubmitted) {
     return (
-      <section className="min-h-screen py-16 px-6 flex flex-col justify-center" style={{ background: "hsl(var(--background))" }}>
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md mx-auto">
+      <section
+        className="min-h-screen py-16 px-6 flex flex-col justify-center"
+        style={{ background: "hsl(var(--background))" }}
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center max-w-md mx-auto"
+        >
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -95,20 +104,32 @@ const RSVPSection = () => {
             className="w-20 h-20 mx-auto mb-8 rounded-full flex items-center justify-center border border-foreground/10"
             style={{ background: "hsl(var(--muted))" }}
           >
-            <svg className="w-10 h-10" style={{ color: "hsl(var(--foreground))" }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M20 6L9 17l-5-5"/>
+            <svg
+              className="w-10 h-10"
+              style={{ color: "hsl(var(--foreground))" }}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <path d="M20 6L9 17l-5-5" />
             </svg>
           </motion.div>
           <h2 className="wedding-title mb-4">Спасибо!</h2>
           <p className="wedding-subtitle">Мы получили ваш ответ</p>
-          <p className="text-muted-foreground mt-6 text-sm">Ждём вас на нашем празднике 💕</p>
+          <p className="text-muted-foreground mt-6 text-sm">
+            Ждём вас на нашем празднике 💕
+          </p>
         </motion.div>
       </section>
     );
   }
 
   return (
-    <section className="min-h-screen py-20 px-6 flex flex-col justify-center" style={{ background: "hsl(var(--background))" }}>
+    <section
+      className="min-h-screen py-20 px-6 flex flex-col justify-center"
+      style={{ background: "hsl(var(--background))" }}
+    >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -138,13 +159,15 @@ const RSVPSection = () => {
           transition={{ delay: 0.2 }}
           onSubmit={handleSubmit}
           className="space-y-6"
-          style={{ fontFamily: 'var(--font-form)' }}
+          style={{ fontFamily: "var(--font-form)" }}
         >
           {/* Name field */}
           <FormField label="Ваше имя" delay={0}>
             <input
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               placeholder="Имя"
               className="w-full bg-transparent border-b border-foreground/15 pb-2 text-sm outline-none placeholder:text-muted-foreground/50 focus:border-foreground/40 transition-colors"
               style={{ color: "hsl(var(--foreground))" }}
@@ -179,8 +202,20 @@ const RSVPSection = () => {
                 {/* Transfer */}
                 <FormField label="Нужен ли трансфер из Минска?" delay={0.1}>
                   <div className="flex flex-wrap gap-2">
-                    <ChipOption selected={formData.transfer === "yes"} onClick={() => setFormData({ ...formData, transfer: "yes" })} label="Да, нужен 🚐" />
-                    <ChipOption selected={formData.transfer === "no"} onClick={() => setFormData({ ...formData, transfer: "no" })} label="Нет, доберусь сам(а)" />
+                    <ChipOption
+                      selected={formData.transfer === "yes"}
+                      onClick={() =>
+                        setFormData({ ...formData, transfer: "yes" })
+                      }
+                      label="Да, нужен 🚐"
+                    />
+                    <ChipOption
+                      selected={formData.transfer === "no"}
+                      onClick={() =>
+                        setFormData({ ...formData, transfer: "no" })
+                      }
+                      label="Нет, доберусь сам(а)"
+                    />
                   </div>
                 </FormField>
               </motion.div>
@@ -191,7 +226,9 @@ const RSVPSection = () => {
           <FormField label="Заметки или пожелания" delay={0.1}>
             <textarea
               value={formData.wishes}
-              onChange={(e) => setFormData({ ...formData, wishes: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, wishes: e.target.value })
+              }
               placeholder="Аллергия, особые пожелания..."
               rows={3}
               className="w-full bg-transparent border border-foreground/10 rounded-lg p-3 text-sm outline-none placeholder:text-muted-foreground/50 focus:border-foreground/30 transition-colors resize-none"
@@ -211,7 +248,16 @@ const RSVPSection = () => {
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
-                  <motion.span animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}>◌</motion.span>
+                  <motion.span
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    ◌
+                  </motion.span>
                   Отправляем...
                 </span>
               ) : (
@@ -221,15 +267,33 @@ const RSVPSection = () => {
           </motion.div>
         </motion.form>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
           className="text-center text-lg text-muted-foreground mt-10 tracking-[0.15em]"
+          style={{ fontFamily: "var(--font-form)" }}
         >
-          С любовью и нетерпением ждём встречи 💕
-        </motion.p>
+          <p>В случае необходимости можете обратиться к организаторам</p>
+          <a href="tel:+79119157143" className="block mt-2">
+            +7 911 915 7143
+          </a>
+          <a
+            href="https://t.me/tsvetkovaawedding"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-3"
+          >
+            <svg
+              className="w-7 h-7 text-muted-foreground hover:text-foreground transition-colors"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+            </svg>
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   );
@@ -237,7 +301,15 @@ const RSVPSection = () => {
 
 /* ── Sub-components ── */
 
-const FormField = ({ label, delay = 0, children }: { label: string; delay?: number; children: React.ReactNode }) => (
+const FormField = ({
+  label,
+  delay = 0,
+  children,
+}: {
+  label: string;
+  delay?: number;
+  children: React.ReactNode;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -251,15 +323,24 @@ const FormField = ({ label, delay = 0, children }: { label: string; delay?: numb
   </motion.div>
 );
 
-const ChipOption = ({ selected, onClick, label }: { selected: boolean; onClick: () => void; label: string }) => (
+const ChipOption = ({
+  selected,
+  onClick,
+  label,
+}: {
+  selected: boolean;
+  onClick: () => void;
+  label: string;
+}) => (
   <button
     type="button"
     onClick={onClick}
     className={`
       px-4 py-2 text-sm border transition-all duration-200 rounded-full
-      ${selected
-        ? "bg-foreground text-background border-foreground"
-        : "bg-transparent border-foreground/15 hover:border-foreground/40"
+      ${
+        selected
+          ? "bg-foreground text-background border-foreground"
+          : "bg-transparent border-foreground/15 hover:border-foreground/40"
       }
     `}
     style={!selected ? { color: "hsl(var(--foreground))" } : undefined}

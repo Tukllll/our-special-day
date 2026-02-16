@@ -6,7 +6,7 @@ import RSVPSection from "@/components/wedding/RSVPSection";
 
 const Index = () => {
   return (
-    <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+    <div className="h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth">
       <div className="h-screen snap-start snap-always">
         <HeroSection />
       </div>
