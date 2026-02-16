@@ -272,7 +272,7 @@ const RSVPSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center text-lg text-muted-foreground mt-10 tracking-[0.15em]"
+          className="text-center text-sm text-muted-foreground mt-10 tracking-[0.08em]"
           style={{ fontFamily: "var(--font-form)" }}
         >
           <p>В случае необходимости можете обратиться к организаторам</p>
