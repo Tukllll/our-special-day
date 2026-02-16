@@ -243,8 +243,7 @@ const RSVPSection = () => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-4 text-sm uppercase tracking-[0.25em] font-medium border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
-              style={{ color: "hsl(var(--foreground))" }}
+              className="w-full py-4 text-sm uppercase tracking-[0.25em] font-medium border border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
