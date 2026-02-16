@@ -22,20 +22,20 @@ const DressCodeSection = () => {
 
   return (
     <section
-      className="h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-16"
       style={{ background: "hsl(var(--background))" }}
     >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto w-full"
+        className="max-w-6xl mx-auto w-full"
       >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm uppercase tracking-[0.3em] text-muted-foreground text-center mb-8"
+          className="text-2xl uppercase tracking-[0.3em] text-muted-foreground text-center mb-8"
         >
           Дресс-код
         </motion.p>
@@ -55,18 +55,18 @@ const DressCodeSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-muted-foreground text-center mb-10 leading-relaxed max-w-md mx-auto"
+          className="text-muted-foreground text-center text-2xl mb-10 leading-relaxed max-w-lg mx-auto spaci"
         >
-          Мы будем рады, если ваш наряд будет в нежных, природных тонах
+          Мы будем рады, если ваш наряд будет в нежных, бежевых тонах
         </motion.p>
 
-        {/* Color palette - two rows like reference */}
+        {/* Color palette */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex justify-center gap-4 md:gap-6 mb-12"
+          className="flex justify-center gap-4 md:gap-6 mb-14"
         >
           {palette.map((item, index) => (
             <motion.div
@@ -91,27 +91,26 @@ const DressCodeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="relative"
         >
-          <div className="grid grid-cols-2 gap-2 md:gap-8 items-end">
+          <div className="grid grid-cols-2 gap-6 md:gap-16 items-end">
             {/* Men - Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="text-center relative z-10"
+              className="text-center"
             >
-              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">
+              <p className="text-xl md:text-base uppercase tracking-widest text-muted-foreground mb-4">
                 Для него
               </p>
-              <div className="flex justify-center items-end -space-x-16 md:-space-x-28">
+              <div className="flex justify-center items-end -space-x-8 md:-space-x-14">
                 {menImages.map((img, index) => (
                   <motion.img
                     key={index}
                     src={img}
                     alt={`Мужской образ ${index + 1}`}
-                    className="w-full h-auto object-contain"
+                    className="h-[220px] md:h-[400px] w-auto object-contain"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -129,16 +128,16 @@ const DressCodeSection = () => {
               transition={{ delay: 0.7 }}
               className="text-center"
             >
-              <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4">
+              <p className="text-xl md:text-base uppercase tracking-widest text-muted-foreground mb-4">
                 Для неё
               </p>
-              <div className="flex justify-center items-end -space-x-[120px]">
+              <div className="flex justify-center items-end -space-x-2 md:-space-x-6">
                 {womenImages.map((img, index) => (
                   <motion.img
                     key={index}
                     src={img}
                     alt={`Женский образ ${index + 1}`}
-                    className={`w-full h-auto object-contain ${index === 0 ? "mr-[-10px]" : ""} ${index === 3 ? "ml-[10px]" : ""}`}
+                    className={`h-[220px] md:h-[400px] w-auto object-contain ${index === 0 ? "-mr-[40px]" : ""}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

@@ -5,19 +5,6 @@ import { toast } from "sonner";
 const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
-const drinkMap: Record<string, string> = {
-  wine: "🍷 Вино",
-  champagne: "🥂 Шампанское",
-  strong: "🥃 Крепкие",
-  none: "🍹 Без алкоголя",
-};
-
-const foodMap: Record<string, string> = {
-  meat: "🥩 Мясо",
-  fish: "🐟 Рыба",
-  vegan: "🥗 Вегетарианское",
-};
-
 const transferMap: Record<string, string> = {
   yes: "✅ Да, нужен",
   no: "❌ Нет, доберусь сам(а)",
@@ -26,12 +13,10 @@ const transferMap: Record<string, string> = {
 const sendToTelegram = async (formData: {
   name: string;
   attending: string;
-  alcohol: string;
-  food: string;
   transfer: string;
   wishes: string;
 }) => {
-  const { name, attending, alcohol, food, transfer, wishes } = formData;
+  const { name, attending, transfer, wishes } = formData;
   const attendingText = attending === "yes" ? "✅ Да, с радостью" : "❌ Не смогу";
 
   let message = `💌 *Новый ответ на приглашение*\n\n`;
@@ -39,8 +24,6 @@ const sendToTelegram = async (formData: {
   message += `📋 *Присутствие:* ${attendingText}\n`;
 
   if (attending === "yes") {
-    if (alcohol) message += `🍸 *Напитки:* ${drinkMap[alcohol] || alcohol}\n`;
-    if (food) message += `🍽 *Еда:* ${foodMap[food] || food}\n`;
     if (transfer) message += `🚐 *Трансфер:* ${transferMap[transfer] || transfer}\n`;
   }
 
@@ -69,8 +52,6 @@ const RSVPSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     attending: "",
-    alcohol: "",
-    food: "",
     transfer: "",
     wishes: ""
   });
@@ -141,12 +122,12 @@ const RSVPSection = () => {
           viewport={{ once: true }}
           className="mb-14 text-center"
         >
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">
+          <p className="text-lg uppercase tracking-[0.4em] text-muted-foreground font-semibold mb-6">
             Анкета гостя
           </p>
           <h2 className="wedding-title mb-3">Ваше присутствие</h2>
-          <p className="text-muted-foreground text-sm tracking-wide">
-            Пожалуйста, заполните до 15 мая
+          <p className="text-muted-foreground text-lg font-semibold tracking-wide">
+            Пожалуйста, подтвердите до 1 мая
           </p>
         </motion.div>
 
@@ -164,7 +145,7 @@ const RSVPSection = () => {
             <input
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="Имя и фамилия"
+              placeholder="Имя"
               className="w-full bg-transparent border-b border-foreground/15 pb-2 text-sm outline-none placeholder:text-muted-foreground/50 focus:border-foreground/40 transition-colors"
               style={{ color: "hsl(var(--foreground))" }}
             />
@@ -195,25 +176,6 @@ const RSVPSection = () => {
                 transition={{ duration: 0.3 }}
                 className="space-y-6 overflow-hidden"
               >
-                {/* Drinks */}
-                <FormField label="Предпочтения по напиткам" delay={0}>
-                  <div className="flex flex-wrap gap-2">
-                    <ChipOption selected={formData.alcohol === "wine"} onClick={() => setFormData({ ...formData, alcohol: "wine" })} label="Вино 🍷" />
-                    <ChipOption selected={formData.alcohol === "champagne"} onClick={() => setFormData({ ...formData, alcohol: "champagne" })} label="Шампанское 🥂" />
-                    <ChipOption selected={formData.alcohol === "strong"} onClick={() => setFormData({ ...formData, alcohol: "strong" })} label="Крепкие 🥃" />
-                    <ChipOption selected={formData.alcohol === "none"} onClick={() => setFormData({ ...formData, alcohol: "none" })} label="Без алкоголя 🍹" />
-                  </div>
-                </FormField>
-
-                {/* Food */}
-                <FormField label="Предпочтения по еде" delay={0.05}>
-                  <div className="flex flex-wrap gap-2">
-                    <ChipOption selected={formData.food === "meat"} onClick={() => setFormData({ ...formData, food: "meat" })} label="Мясо 🥩" />
-                    <ChipOption selected={formData.food === "fish"} onClick={() => setFormData({ ...formData, food: "fish" })} label="Рыба 🐟" />
-                    <ChipOption selected={formData.food === "vegan"} onClick={() => setFormData({ ...formData, food: "vegan" })} label="Вегетарианское 🥗" />
-                  </div>
-                </FormField>
-
                 {/* Transfer */}
                 <FormField label="Нужен ли трансфер из Минска?" delay={0.1}>
                   <div className="flex flex-wrap gap-2">
@@ -264,7 +226,7 @@ const RSVPSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center text-xs text-muted-foreground mt-10 tracking-wide"
+          className="text-center text-lg text-muted-foreground mt-10 tracking-[0.15em]"
         >
           С любовью и нетерпением ждём встречи 💕
         </motion.p>

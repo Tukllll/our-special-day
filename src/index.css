@@ -105,6 +105,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-main);
+    letter-spacing: 0.05em;
   }
 }
 
@@ -119,12 +120,12 @@
   }
 
   .wedding-subtitle {
-    @apply text-sm md:text-base font-normal tracking-[0.3em] uppercase;
+    @apply text-sm md:text-base font-normal tracking-[0.35em] uppercase;
     color: hsl(var(--muted-foreground));
   }
 
   .wedding-quote {
-    @apply text-base md:text-lg text-center leading-relaxed tracking-wide;
+    @apply text-base md:text-lg text-center leading-relaxed tracking-[0.1em];
     color: hsl(var(--foreground));
   }
 

@@ -20,12 +20,12 @@ const LocationSection = () => {
       subtext: "среда",
     },
     {
-      label: "Время",
-      value: "15:00",
-      subtext: "сбор гостей и трансфер из Минска до локации",
+      label: "Время и место встречи",
+      value: "14:00",
+      subtext: "сбор гостей на парковке Национальной библиотеки и трансфер на площадку",
     },
     {
-      label: "Место",
+      label: "Локация",
       value: "Усадьба Богдановичей",
       subtext: "ул. Примерная, 123",
     },
@@ -79,12 +79,12 @@ const LocationSection = () => {
               className="flex items-baseline gap-4 py-4 border-b border-white/10"
             >
               {/* Label */}
-              <p className="text-xs uppercase tracking-[0.2em] text-white/50 w-16 flex-shrink-0">{item.label}</p>
+              <p className="text-lg md:text-xl uppercase tracking-[0.2em] text-white/80 font-black w-28 flex-shrink-0">{item.label}</p>
 
               {/* Value */}
               <div className="flex-1">
-                <p className="text-xl md:text-2xl text-white font-medium">{item.value}</p>
-                <p className="text-sm text-white/50 mt-0.5">{item.subtext}</p>
+                <p className="text-2xl md:text-3xl text-white font-semibold tracking-[0.08em]">{item.value}</p>
+                <p className="text-white/70 mt-0.5 tracking-[0.06em]" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "12px" }}>{item.subtext}</p>
               </div>
             </motion.div>
           ))}
@@ -98,13 +98,13 @@ const LocationSection = () => {
           className="mt-10"
         >
           <a
-            href="https://maps.app.goo.gl/79AJBqgS6QKnRJG48"
+            href="https://yandex.com.tr/maps/157/minsk/?ll=27.649400%2C53.931583&mode=whatshere&whatshere%5Bpoint%5D=27.648788%2C53.931929&whatshere%5Bzoom%5D=17&z=17.57"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all"
           >
             <MapPinned className="w-4 h-4" />
-            Открыть карту
+            Точка встречи
           </a>
         </motion.div>
       </motion.div>
